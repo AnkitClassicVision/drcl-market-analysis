@@ -78,9 +78,15 @@
 }
 
 html {
-  scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Smooth scroll only for anchor navigation, not regular scrolling */
+@media (prefers-reduced-motion: no-preference) {
+  html:focus-within {
+    scroll-behavior: smooth;
+  }
 }
 
 body {
@@ -92,6 +98,8 @@ body {
   background: var(--color-slate-900);
   min-height: 100vh;
   overflow-x: hidden;
+  /* Improve scroll performance */
+  -webkit-overflow-scrolling: touch;
 }
 
 /* ==========================================================================
@@ -144,11 +152,14 @@ a:hover {
 .aurora-blob {
   position: absolute;
   border-radius: 50%;
-  filter: blur(60px);
-  opacity: 0.5;
+  filter: blur(80px);
+  opacity: 0.4;
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
-  animation: aurora-float 35s linear infinite;
+  will-change: transform;
+  animation: aurora-float 45s linear infinite;
+  /* Pause animation during scroll for better performance */
+  animation-play-state: running;
 }
 
 .aurora-blob--indigo {
@@ -225,11 +236,10 @@ a:hover {
   right: 0;
   z-index: 100;
   padding: var(--space-sm) 0;
-  background: rgba(15, 23, 42, 0.85);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: rgba(15, 23, 42, 0.95);
   border-bottom: 1px solid var(--glass-border);
   transform: translateZ(0);
+  will-change: transform;
 }
 
 .nav__container {
@@ -324,33 +334,23 @@ a:hover {
    ========================================================================== */
 
 .glass-card {
-  background: var(--glass-bg);
+  background: rgba(20, 25, 40, 0.7);
   border: 1px solid var(--glass-border);
   border-radius: var(--radius-lg);
-  backdrop-filter: blur(var(--glass-blur));
-  -webkit-backdrop-filter: blur(var(--glass-blur));
   transform: translateZ(0);
-  transition: transform var(--transition-normal);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
   contain: layout style paint;
 }
 
 .glass-card:hover {
-  transform: translateY(-3px) translateZ(0);
-}
-
-@supports not (backdrop-filter: blur(8px)) {
-  .glass-card {
-    background: rgba(20, 20, 30, 0.9);
-  }
+  transform: translateY(-2px) translateZ(0);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .glass-card {
-    backdrop-filter: none;
-    background: rgba(20, 20, 30, 0.85);
-  }
   .glass-card:hover {
     transform: none;
+    box-shadow: none;
   }
 }
 
@@ -910,32 +910,32 @@ a:hover {
 
 [data-reveal] {
   opacity: 0;
-  transform: translateY(12px) translateZ(0);
-  transition: opacity 0.4s var(--ease-out-expo), transform 0.4s var(--ease-out-expo);
+  transform: translateY(8px);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
 }
 
 [data-reveal].revealed {
   opacity: 1;
-  transform: translateY(0) translateZ(0);
+  transform: translateY(0);
 }
 
 /* Staggered reveal for grid items */
 [data-reveal-stagger] > * {
   opacity: 0;
-  transform: translateY(12px) translateZ(0);
-  transition: opacity 0.4s var(--ease-out-expo), transform 0.4s var(--ease-out-expo);
+  transform: translateY(8px);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
 }
 
 [data-reveal-stagger].revealed > *:nth-child(1) { transition-delay: 0s; }
-[data-reveal-stagger].revealed > *:nth-child(2) { transition-delay: 0.05s; }
-[data-reveal-stagger].revealed > *:nth-child(3) { transition-delay: 0.1s; }
-[data-reveal-stagger].revealed > *:nth-child(4) { transition-delay: 0.15s; }
-[data-reveal-stagger].revealed > *:nth-child(5) { transition-delay: 0.2s; }
-[data-reveal-stagger].revealed > *:nth-child(6) { transition-delay: 0.25s; }
+[data-reveal-stagger].revealed > *:nth-child(2) { transition-delay: 0.03s; }
+[data-reveal-stagger].revealed > *:nth-child(3) { transition-delay: 0.06s; }
+[data-reveal-stagger].revealed > *:nth-child(4) { transition-delay: 0.09s; }
+[data-reveal-stagger].revealed > *:nth-child(5) { transition-delay: 0.12s; }
+[data-reveal-stagger].revealed > *:nth-child(6) { transition-delay: 0.15s; }
 
 [data-reveal-stagger].revealed > * {
   opacity: 1;
-  transform: translateY(0) translateZ(0);
+  transform: translateY(0);
 }
 
 @media (prefers-reduced-motion: reduce) {
