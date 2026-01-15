@@ -1,4 +1,5 @@
 /* DRCL Market Analysis Website - Ethereal Clarity Design System */
+/* Optimized for smooth 60fps performance */
 
 /* ==========================================================================
    CSS Custom Properties (Design Tokens)
@@ -28,10 +29,10 @@
   --color-slate-900: #0f172a;
   --color-slate-950: #020617;
 
-  /* Glass Effects */
-  --glass-bg: rgba(255, 255, 255, 0.05);
-  --glass-border: rgba(255, 255, 255, 0.1);
-  --glass-blur: 12px;
+  /* Glass Effects - Optimized */
+  --glass-bg: rgba(255, 255, 255, 0.04);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-blur: 8px;
 
   /* Typography */
   --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
@@ -58,10 +59,14 @@
   --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.15);
   --shadow-large: 0 12px 40px rgba(0, 0, 0, 0.2);
 
-  /* Transitions */
-  --transition-fast: 0.15s ease;
-  --transition-normal: 0.3s ease;
-  --transition-slow: 0.5s ease;
+  /* Transitions - Faster, smoother curves */
+  --transition-fast: 0.12s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Easing */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 /* ==========================================================================
@@ -74,6 +79,8 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
@@ -122,7 +129,7 @@ a:hover {
 }
 
 /* ==========================================================================
-   Aurora Background
+   Aurora Background - Optimized for 60fps
    ========================================================================== */
 
 .aurora-bg {
@@ -131,55 +138,56 @@ a:hover {
   overflow: hidden;
   z-index: -1;
   pointer-events: none;
+  contain: strict;
 }
 
 .aurora-blob {
   position: absolute;
   border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.6;
-  will-change: transform;
+  filter: blur(60px);
+  opacity: 0.5;
   transform: translate3d(0, 0, 0);
-  animation: aurora-float 20s ease-in-out infinite;
+  backface-visibility: hidden;
+  animation: aurora-float 35s linear infinite;
 }
 
 .aurora-blob--indigo {
-  width: 40vw;
-  height: 40vw;
-  background: radial-gradient(circle, var(--color-indigo) 0%, transparent 70%);
+  width: 35vw;
+  height: 35vw;
+  background: radial-gradient(circle, var(--color-indigo) 0%, transparent 65%);
   left: 10%;
   top: 20%;
 }
 
 .aurora-blob--rose {
-  width: 35vw;
-  height: 35vw;
-  background: radial-gradient(circle, var(--color-rose) 0%, transparent 70%);
+  width: 30vw;
+  height: 30vw;
+  background: radial-gradient(circle, var(--color-rose) 0%, transparent 65%);
   right: 15%;
   top: 30%;
-  animation-delay: -7s;
+  animation-delay: -12s;
 }
 
 .aurora-blob--teal {
-  width: 30vw;
-  height: 30vw;
-  background: radial-gradient(circle, var(--color-teal) 0%, transparent 70%);
+  width: 25vw;
+  height: 25vw;
+  background: radial-gradient(circle, var(--color-teal) 0%, transparent 65%);
   left: 40%;
   bottom: 20%;
-  animation-delay: -14s;
+  animation-delay: -24s;
 }
 
 @keyframes aurora-float {
-  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
-  25% { transform: translate3d(5%, -3%, 0) scale(1.05); }
-  50% { transform: translate3d(-3%, 5%, 0) scale(0.95); }
-  75% { transform: translate3d(-5%, -2%, 0) scale(1.02); }
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  25% { transform: translate3d(3%, -2%, 0) scale(1.02); }
+  50% { transform: translate3d(-2%, 3%, 0) scale(0.98); }
+  75% { transform: translate3d(-3%, -1%, 0) scale(1.01); }
+  100% { transform: translate3d(0, 0, 0) scale(1); }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .aurora-blob {
     animation: none;
-    will-change: auto;
   }
 }
 
@@ -196,6 +204,7 @@ a:hover {
 
 .section {
   padding: var(--space-3xl) 0;
+  contain: layout style;
 }
 
 .section--hero {
@@ -216,10 +225,11 @@ a:hover {
   right: 0;
   z-index: 100;
   padding: var(--space-sm) 0;
-  background: rgba(15, 23, 42, 0.8);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--glass-border);
+  transform: translateZ(0);
 }
 
 .nav__container {
@@ -299,7 +309,7 @@ a:hover {
     right: 0;
     flex-direction: column;
     background: rgba(15, 23, 42, 0.95);
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(8px);
     padding: var(--space-lg);
     gap: var(--space-md);
   }
@@ -310,7 +320,7 @@ a:hover {
 }
 
 /* ==========================================================================
-   Glass Cards
+   Glass Cards - Optimized
    ========================================================================== */
 
 .glass-card {
@@ -319,20 +329,16 @@ a:hover {
   border-radius: var(--radius-lg);
   backdrop-filter: blur(var(--glass-blur));
   -webkit-backdrop-filter: blur(var(--glass-blur));
-  isolation: isolate;
-  transition: transform var(--transition-normal), opacity var(--transition-normal);
+  transform: translateZ(0);
+  transition: transform var(--transition-normal);
+  contain: layout style paint;
 }
 
 .glass-card:hover {
-  will-change: transform;
-  transform: translateY(-4px);
+  transform: translateY(-3px) translateZ(0);
 }
 
-.glass-card:not(:hover) {
-  will-change: auto;
-}
-
-@supports not (backdrop-filter: blur(12px)) {
+@supports not (backdrop-filter: blur(8px)) {
   .glass-card {
     background: rgba(20, 20, 30, 0.9);
   }
@@ -373,7 +379,8 @@ a:hover {
   border-radius: var(--radius-full);
   border: none;
   cursor: pointer;
-  transition: all var(--transition-fast);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
+  transform: translateZ(0);
 }
 
 .btn--primary {
@@ -384,7 +391,7 @@ a:hover {
 
 .btn--primary:hover {
   background: #5558eb;
-  transform: translateY(-2px);
+  transform: translateY(-2px) translateZ(0);
   box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
 }
 
@@ -640,7 +647,7 @@ a:hover {
   display: flex;
   align-items: center;
   padding: 0 var(--space-md);
-  transition: all var(--transition-normal);
+  transition: filter var(--transition-fast);
 }
 
 .funnel-stage__bar:hover {
@@ -898,22 +905,42 @@ a:hover {
 }
 
 /* ==========================================================================
-   Scroll Reveal Animation
+   Scroll Reveal Animation - Optimized
    ========================================================================== */
 
 [data-reveal] {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity var(--transition-slow), transform var(--transition-slow);
+  transform: translateY(12px) translateZ(0);
+  transition: opacity 0.4s var(--ease-out-expo), transform 0.4s var(--ease-out-expo);
 }
 
 [data-reveal].revealed {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) translateZ(0);
+}
+
+/* Staggered reveal for grid items */
+[data-reveal-stagger] > * {
+  opacity: 0;
+  transform: translateY(12px) translateZ(0);
+  transition: opacity 0.4s var(--ease-out-expo), transform 0.4s var(--ease-out-expo);
+}
+
+[data-reveal-stagger].revealed > *:nth-child(1) { transition-delay: 0s; }
+[data-reveal-stagger].revealed > *:nth-child(2) { transition-delay: 0.05s; }
+[data-reveal-stagger].revealed > *:nth-child(3) { transition-delay: 0.1s; }
+[data-reveal-stagger].revealed > *:nth-child(4) { transition-delay: 0.15s; }
+[data-reveal-stagger].revealed > *:nth-child(5) { transition-delay: 0.2s; }
+[data-reveal-stagger].revealed > *:nth-child(6) { transition-delay: 0.25s; }
+
+[data-reveal-stagger].revealed > * {
+  opacity: 1;
+  transform: translateY(0) translateZ(0);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  [data-reveal] {
+  [data-reveal],
+  [data-reveal-stagger] > * {
     opacity: 1;
     transform: none;
     transition: none;
@@ -1010,6 +1037,7 @@ a:hover {
 /* Content Sections */
 .content-section {
   margin-bottom: var(--space-3xl);
+  contain: layout style;
 }
 
 .content-section__title {
