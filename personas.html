@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buyer Personas | DRCL Market Analysis</title>
+  <meta name="description" content="6 detailed buyer personas for Dr. Contact Lens with demographics, pain points, and messaging recommendations.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --color-indigo: #6366f1; --color-rose: #f43f5e; --color-teal: #14b8a6; --color-slate-900: #0f172a; --color-slate-50: #f8fafc; }
+    body { margin: 0; font-family: 'Inter', -apple-system, sans-serif; background: var(--color-slate-900); color: var(--color-slate-50); }
+    .aurora-bg { position: fixed; inset: 0; overflow: hidden; z-index: -1; }
+  </style>
+  <link rel="preload" href="./assets/css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="./assets/css/main.css"></noscript>
+  <script defer src="./assets/js/main.js"></script>
+</head>
+<body>
+  <div class="aurora-bg">
+    <div class="aurora-blob aurora-blob--indigo"></div>
+    <div class="aurora-blob aurora-blob--rose"></div>
+    <div class="aurora-blob aurora-blob--teal"></div>
+  </div>
+
+  <svg style="display: none;">
+    <symbol id="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+    <symbol id="icon-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+    <symbol id="icon-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+  </svg>
+
+  <nav class="nav">
+    <div class="container nav__container">
+      <a href="index.html" class="nav__logo">
+        <svg class="icon" width="32" height="32"><use href="#icon-target"/></svg>
+        <span>DRCL Analysis</span>
+      </a>
+      <button class="nav__toggle" aria-label="Toggle navigation"><svg class="icon" width="24" height="24"><use href="#icon-menu"/></svg></button>
+      <ul class="nav__links">
+        <li><a href="index.html" class="nav__link">Overview</a></li>
+        <li><a href="executive-summary.html" class="nav__link">Executive Summary</a></li>
+        <li><a href="personas.html" class="nav__link nav__link--active">Personas</a></li>
+        <li><a href="competitive.html" class="nav__link">Competitive</a></li>
+        <li><a href="funnels.html" class="nav__link">Funnels</a></li>
+        <li><a href="marketing.html" class="nav__link">Marketing</a></li>
+        <li><a href="partnerships.html" class="nav__link">Partnerships</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="container">
+      <h1 class="page-header__title" data-reveal>Buyer Personas</h1>
+      <p class="page-header__subtitle" data-reveal>6 detailed personas with demographics, pain points, LTV/CAC, and messaging recommendations</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Priority Matrix -->
+    <section class="content-section" data-reveal>
+      <h2 class="content-section__title">
+        <span class="icon-box"><svg class="icon" width="24" height="24"><use href="#icon-users"/></svg></span>
+        Persona Priority Matrix
+      </h2>
+
+      <div class="glass-card glass-card--padded mb-xl">
+        <div style="overflow-x: auto;">
+          <table class="competitive-table">
+            <thead>
+              <tr>
+                <th>Persona</th>
+                <th>Market Size</th>
+                <th>ACV Potential</th>
+                <th>Sales Ease</th>
+                <th>Priority</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Multi-Location Leader (James)</td>
+                <td>Growing</td>
+                <td>$18-36K</td>
+                <td>Medium-Hard</td>
+                <td><span class="badge badge--danger">HIGHEST</span></td>
+              </tr>
+              <tr>
+                <td>Solo Practice Owner (Sarah)</td>
+                <td>62% of practices</td>
+                <td>$3,240</td>
+                <td>Medium</td>
+                <td><span class="badge badge--success">HIGH</span></td>
+              </tr>
+              <tr>
+                <td>Practice Manager (Jennifer)</td>
+                <td>40% decision influence</td>
+                <td>$3,240</td>
+                <td>High</td>
+                <td><span class="badge badge--success">HIGH</span></td>
+              </tr>
+              <tr>
+                <td>New Practice Owner (Michael)</td>
+                <td>10% of market</td>
+                <td>$3,240 (growing)</td>
+                <td>High</td>
+                <td><span class="badge badge--info">MEDIUM-HIGH</span></td>
+              </tr>
+              <tr>
+                <td>Tech-Savvy Innovator (Kevin)</td>
+                <td>5% specialty</td>
+                <td>$5,000</td>
+                <td>Easy</td>
+                <td><span class="badge badge--info">MEDIUM-HIGH</span></td>
+              </tr>
+              <tr>
+                <td>Corporate-Employed OD (Amanda)</td>
+                <td>25% of ODs</td>
+                <td>$0 (future)</td>
+                <td>N/A</td>
+                <td><span class="badge" style="background: rgba(148,163,184,0.1); color: #94a3b8;">LOW (nurture)</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Persona Cards -->
+    <section class="content-section">
+      <div class="persona-grid">
+        <!-- Persona 1: Dr. Sarah Mitchell -->
+        <div class="glass-card persona-card" data-reveal>
+          <div class="persona-card__header">
+            <div style="width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, var(--color-indigo), var(--color-rose)); display: flex; align-items: center; justify-content: center; border: 3px solid white; box-shadow: var(--shadow-soft);">
+              <span style="font-size: 2rem; color: white;">SM</span>
+            </div>
+            <div class="persona-card__info">
+              <div class="persona-card__name">Dr. Sarah Mitchell</div>
+              <div class="persona-card__role">Solo Practice Owner</div>
+            </div>
+          </div>
+          <p class="persona-card__quote">"I don't have time to learn another system."</p>
+          <div class="persona-card__stats">
+            <div class="persona-stat"><div class="persona-stat__value">$3,240</div><div class="persona-stat__label">Est. ACV</div></div>
+            <div class="persona-stat"><div class="persona-stat__value">45-60 days</div><div class="persona-stat__label">Sales Cycle</div></div>
+            <div class="persona-stat"><div class="persona-stat__value">52</div><div class="persona-stat__label">Age</div></div>
+            <div class="persona-stat"><div class="persona-stat__value">$850-950K</div><div class="persona-stat__label">Revenue</div></div>
+          </div>
+          <p style="font-size: 0.875rem; color: var(--color-slate-400); margin-top: 1rem;">
+            <strong>Pain Points:</strong> 30% CL patients buying online, 8-10 hrs/week manual ordering, fears complex implementations
+          </p>
+          <p style="font-size: 0.875rem; color: var(--color-indigo); margin-bottom: 0;">
+            <strong>Message:</strong> "Keep your contact lens revenue in YOUR practice. Set it up in a week, see results in 30 days."
+          </p>
+          <span class="persona-card__priority persona-card__priority--high">HIGH PRIORITY</span>
+        </div>
+
+        <!-- Persona 2: Dr. James Chen -->
+        <div class="glass-card persona-card" data-reveal>
+          <div class="persona-card__header">
+            <div style="width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, var(--color-teal), var(--color-indigo)); display: flex; align-items: center; justify-content: center; border: 3px solid white; box-shadow: var(--shadow-soft);">
+              <span style="font-size: 2rem; color: white;">JC</span>
+            </div>
+            <div class="persona-card__info">
+              <div class="persona-card__name">Dr. James Chen</div>
+              <div class="persona-card__role">Multi-Location Group Leader</div>
+            </div>
+          </div>
+          <p class="persona-card__quote">"Can it handle our volume across all locations?"</p>
+          <div class="persona-card__stats">
+            <div class="persona-stat"><div class="persona-stat__value">$18-36K</div><div class="persona-stat__label">Est. ACV</div></div>
+            <div class="persona-stat"><div class="persona-stat__value">90-120 days</div><div class="persona-stat__label">Sales Cycle</div></div>
+            <div class="persona-stat"><div class="persona-stat__value">48</div><div class="persona-stat__label">Age</div></div>
+            <div class="persona-stat"><div class="persona-stat__value">$8.5-9.5M</div><div class="persona-stat__label">Revenue</div></div>
+          </div>
+          <p style="font-size: 0.875rem; color: var(--color-slate-400); margin-top: 1rem;">
+            <strong>Pain Points:</strong> Inconsistent processes across 8 locations, no unified reporting, staff turnover = constant retraining
+          </p>
+          <p style="font-size: 0.875rem; color: var(--color-indigo); margin-bottom: 0;">
+            <strong>Message:</strong> "One platform, all 8 locations. Real-time CL performance dashboards. Standardize operations for scale."
+          </p>
+          <span class="persona-card__priority" style="background: rgba(244,63,94,0.1); color: var(--color-rose);">HIGHEST PRIORITY</span>
+        </div>
+
+        <!-- Persona 3: Jennifer Rodriguez -->
+        <div class="glass-card persona-card" data-reveal>
+          <div class="persona-card__header">
+            <div style="width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, var(--color-rose), var(--color-teal)); display: flex; align-items: center; justify-content: center; border: 3px solid white; box-shadow: var(--shadow-soft);">
+              <span style="font-size: 2rem; color: white;">JR</span>
+            </div>
+            <div class="persona-card__info">
+              <div class="persona-card__name">Jennifer Rodriguez</div>
+              <div class="persona-card__role">Practice Manager</div>
+            </div>
+          </div>
+          <p class="persona-card__quote">"My doctors won't spend money on 'another subscription'."</p>
+          <div class="persona-card__stats">
+            <div class="persona-stat"><div class="persona-stat__value">$3,240</div><div class="persona-stat__label">Est. ACV</div></div>
+            <div class="persona-stat"><div class="persona-stat__value">30-45 days</div><div class="persona-stat__label">Sales Cycle</div></div>
+            <div class="persona-stat"><div class="persona-stat__value">38</div><div class="persona-stat__label">Age</div></div>
+            <div class="persona-stat"><div class="persona-stat__value">$1.4M</div><div class="persona-stat__label">Practice Rev</div></div>
+          </div>
+          <p style="font-size: 0.875rem; color: var(--color-slate-400); margin-top: 1rem;">
+            <strong>Pain Points:</strong> 8-10 hrs/week on CL admin, must justify every dollar, multiple vendor portals create errors
+          </p>
+          <p style="font-size: 0.875rem; color: var(--color-indigo); margin-bottom: 0;">
+            <strong>Message:</strong> "Show your doctors the numbers: 50% reduction in CL admin time, 32% revenue increase. We'll help you build the business case."
+          </p>
+          <span class="persona-card__priority persona-card__priority--high">HIGH PRIORITY</span>
+        </div>
+
+        <!-- Persona 4: Dr. Michael Thompson -->
+        <div class="glass-card persona-card" data-reveal>
+          <div class="persona-card__header">
+            <div style="width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, var(--color-indigo), var(--color-teal)); display: flex; align-items: center; justify-content: center; border: 3px solid white; box-shadow: var(--shadow-soft);">
+              <span style="font-size: 2rem; color: white;">MT</span>
+            </div>
+            <div class="persona-card__info">
+              <div class="persona-card__name">Dr. Michael Thompson</div>
+              <div class="persona-card__role">New Practice Owner</div>
+            </div>
+          </div>
+          <p class="persona-card__quote">"I can't afford another monthly subscription right now."</p>
+          <div class="persona-card__stats">
+            <div class="persona-stat"><div class="persona-stat__value">$3,240</div><div class="persona-stat__label">Est. ACV</div></div>
+            <div class="persona-stat"><div class="persona-stat__value">14-30 days</div><div class="persona-stat__label">Sales Cycle</div></div>
+            <div class="persona-stat"><div class="persona-stat__value">33</div><div class="persona-stat__label">Age</div></div>
+            <div class="persona-stat"><div class="persona-stat__value">$720K</div><div class="persona-stat__label">Revenue</div></div>
+          </div>
+          <p style="font-size: 0.875rem; color: var(--color-slate-400); margin-top: 1rem;">
+            <strong>Pain Points:</strong> Time poverty, cash flow constraints from acquisition debt, inherited outdated systems
+          </p>
+          <p style="font-size: 0.875rem; color: var(--color-indigo); margin-bottom: 0;">
+            <strong>Message:</strong> "Turn your CL business into a revenue engine from day one. Less than $9/day to capture revenue you're losing to the internet."
+          </p>
+          <span class="persona-card__priority persona-card__priority--medium">MEDIUM-HIGH PRIORITY</span>
+        </div>
+
+        <!-- Persona 5: Dr. Amanda Foster -->
+        <div class="glass-card persona-card" data-reveal>
+          <div class="persona-card__header">
+            <div style="width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, #94a3b8, var(--color-slate-600)); display: flex; align-items: center; justify-content: center; border: 3px solid white; box-shadow: var(--shadow-soft);">
+              <span style="font-size: 2rem; color: white;">AF</span>
+            </div>
+            <div class="persona-card__info">
+              <div class="persona-card__name">Dr. Amanda Foster</div>
+              <div class="persona-card__role">Corporate-Employed OD</div>
+            </div>
+          </div>
+          <p class="persona-card__quote">"No control over practice technology decisions."</p>
+          <div class="persona-card__stats">
+            <div class="persona-stat"><div class="persona-stat__value">$0</div><div class="persona-stat__label">Current ACV</div></div>
+            <div class="persona-stat"><div class="persona-stat__value">5-7 years</div><div class="persona-stat__label">Future Timeline</div></div>
+            <div class="persona-stat"><div class="persona-stat__value">29</div><div class="persona-stat__label">Age</div></div>
+            <div class="persona-stat"><div class="persona-stat__value">$145K</div><div class="persona-stat__label">Salary</div></div>
+          </div>
+          <p style="font-size: 0.875rem; color: var(--color-slate-400); margin-top: 1rem;">
+            <strong>Pain Points:</strong> No control over tech decisions, CL revenue goes to LensCrafters, frustrated by corporate systems
+          </p>
+          <p style="font-size: 0.875rem; color: var(--color-indigo); margin-bottom: 0;">
+            <strong>Nurture Message:</strong> "When you're ready to open your own practice, we'll help you build a CL business that competes with the corporate giants."
+          </p>
+          <span class="persona-card__priority persona-card__priority--low">LOW (NURTURE)</span>
+        </div>
+
+        <!-- Persona 6: Dr. Kevin Park -->
+        <div class="glass-card persona-card" data-reveal>
+          <div class="persona-card__header">
+            <div style="width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, var(--color-teal), var(--color-rose)); display: flex; align-items: center; justify-content: center; border: 3px solid white; box-shadow: var(--shadow-soft);">
+              <span style="font-size: 2rem; color: white;">KP</span>
+            </div>
+            <div class="persona-card__info">
+              <div class="persona-card__name">Dr. Kevin Park</div>
+              <div class="persona-card__role">Tech-Savvy Innovator</div>
+            </div>
+          </div>
+          <p class="persona-card__quote">"Does it handle my specialty lens inventory?"</p>
+          <div class="persona-card__stats">
+            <div class="persona-stat"><div class="persona-stat__value">$3,240-5K</div><div class="persona-stat__label">Est. ACV</div></div>
+            <div class="persona-stat"><div class="persona-stat__value">7-14 days</div><div class="persona-stat__label">Sales Cycle</div></div>
+            <div class="persona-stat"><div class="persona-stat__value">41</div><div class="persona-stat__label">Age</div></div>
+            <div class="persona-stat"><div class="persona-stat__value">$1.3M</div><div class="persona-stat__label">Revenue</div></div>
+          </div>
+          <p style="font-size: 0.875rem; color: var(--color-slate-400); margin-top: 1rem;">
+            <strong>Pain Points:</strong> Specialty lens ordering is complex, standard platforms don't handle specialty workflows
+          </p>
+          <p style="font-size: 0.875rem; color: var(--color-indigo); margin-bottom: 0;">
+            <strong>Message:</strong> "Finally, a platform that understands specialty contact lens workflows. Ortho-k, scleral, myopia management - all in one system."
+          </p>
+          <span class="persona-card__priority persona-card__priority--medium">MEDIUM-HIGH PRIORITY</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- GTM Recommendations -->
+    <section class="content-section" data-reveal>
+      <h2 class="content-section__title">Go-to-Market Recommendations</h2>
+
+      <div class="grid-3">
+        <div class="glass-card glass-card--padded">
+          <h3 style="color: var(--color-rose);">Tier 1: Launch Focus</h3>
+          <ul style="color: var(--color-slate-300); font-size: 0.875rem; line-height: 2;">
+            <li>Multi-Location Groups</li>
+            <li>Solo Practice Owners</li>
+          </ul>
+          <p style="font-size: 0.75rem; color: var(--color-slate-400);">Highest combined revenue potential. Solo = volume; Groups = high ACV.</p>
+        </div>
+
+        <div class="glass-card glass-card--padded">
+          <h3 style="color: var(--color-indigo);">Tier 2: Scale Focus</h3>
+          <ul style="color: var(--color-slate-300); font-size: 0.875rem; line-height: 2;">
+            <li>Practice Managers</li>
+            <li>New Practice Owners</li>
+          </ul>
+          <p style="font-size: 0.75rem; color: var(--color-slate-400);">Efficient acquisition channels via content and communities.</p>
+        </div>
+
+        <div class="glass-card glass-card--padded">
+          <h3 style="color: var(--color-teal);">Tier 3: Long-term</h3>
+          <ul style="color: var(--color-slate-300); font-size: 0.875rem; line-height: 2;">
+            <li>Tech-Savvy Innovators</li>
+            <li>Corporate ODs</li>
+          </ul>
+          <p style="font-size: 0.75rem; color: var(--color-slate-400);">Beta testers, testimonial sources, future private practice owners.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__text">DRCL Market Analysis | Generated 2026-01-15</div>
+        <div class="footer__links">
+          <a href="https://drcontactlens.com" class="footer__link" target="_blank">drcontactlens.com</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

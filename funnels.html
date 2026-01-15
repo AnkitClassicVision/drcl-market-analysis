@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Funnel Economics | DRCL Market Analysis</title>
+  <meta name="description" content="Unit economics analysis for Dr. Contact Lens: LTV, CAC, payback periods, and practice ROI.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --color-indigo: #6366f1; --color-rose: #f43f5e; --color-teal: #14b8a6; --color-slate-900: #0f172a; --color-slate-50: #f8fafc; }
+    body { margin: 0; font-family: 'Inter', -apple-system, sans-serif; background: var(--color-slate-900); color: var(--color-slate-50); }
+    .aurora-bg { position: fixed; inset: 0; overflow: hidden; z-index: -1; }
+  </style>
+  <link rel="preload" href="./assets/css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="./assets/css/main.css"></noscript>
+  <script defer src="./assets/js/main.js"></script>
+</head>
+<body>
+  <div class="aurora-bg">
+    <div class="aurora-blob aurora-blob--indigo"></div>
+    <div class="aurora-blob aurora-blob--rose"></div>
+    <div class="aurora-blob aurora-blob--teal"></div>
+  </div>
+
+  <svg style="display: none;">
+    <symbol id="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+    <symbol id="icon-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+    <symbol id="icon-bar-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></symbol>
+    <symbol id="icon-dollar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></symbol>
+  </svg>
+
+  <nav class="nav">
+    <div class="container nav__container">
+      <a href="index.html" class="nav__logo">
+        <svg class="icon" width="32" height="32"><use href="#icon-target"/></svg>
+        <span>DRCL Analysis</span>
+      </a>
+      <button class="nav__toggle" aria-label="Toggle navigation"><svg class="icon" width="24" height="24"><use href="#icon-menu"/></svg></button>
+      <ul class="nav__links">
+        <li><a href="index.html" class="nav__link">Overview</a></li>
+        <li><a href="executive-summary.html" class="nav__link">Executive Summary</a></li>
+        <li><a href="personas.html" class="nav__link">Personas</a></li>
+        <li><a href="competitive.html" class="nav__link">Competitive</a></li>
+        <li><a href="funnels.html" class="nav__link nav__link--active">Funnels</a></li>
+        <li><a href="marketing.html" class="nav__link">Marketing</a></li>
+        <li><a href="partnerships.html" class="nav__link">Partnerships</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="container">
+      <h1 class="page-header__title" data-reveal>Funnel Economics</h1>
+      <p class="page-header__subtitle" data-reveal>LTV, CAC, payback periods, and practice ROI analysis</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Key Metrics -->
+    <section class="content-section" data-reveal>
+      <h2 class="content-section__title">
+        <span class="icon-box"><svg class="icon" width="24" height="24"><use href="#icon-dollar"/></svg></span>
+        DRCL Unit Economics
+      </h2>
+
+      <div class="stats-grid mb-xl">
+        <div class="glass-card stat-card">
+          <div class="stat-card__value stat-card__value--indigo">6.75-17.8x</div>
+          <div class="stat-card__label">LTV:CAC Ratio</div>
+        </div>
+        <div class="glass-card stat-card">
+          <div class="stat-card__value stat-card__value--teal">2-3 mo</div>
+          <div class="stat-card__label">CAC Payback</div>
+        </div>
+        <div class="glass-card stat-card">
+          <div class="stat-card__value stat-card__value--rose">10.8x</div>
+          <div class="stat-card__label">Practice ROI</div>
+        </div>
+        <div class="glass-card stat-card">
+          <div class="stat-card__value stat-card__value--emerald">$3,240</div>
+          <div class="stat-card__label">Annual Subscription</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LTV Analysis -->
+    <section class="content-section" data-reveal>
+      <h2 class="content-section__title">Customer Lifetime Value</h2>
+
+      <div class="grid-2">
+        <div class="glass-card glass-card--padded">
+          <h3>Revenue Per Customer</h3>
+          <table class="competitive-table" style="margin-top: 1rem;">
+            <tr><td>Monthly Subscription</td><td style="text-align: right; color: var(--color-slate-50); font-weight: 600;">$270</td></tr>
+            <tr><td>Annual Subscription</td><td style="text-align: right; color: var(--color-slate-50); font-weight: 600;">$3,240</td></tr>
+            <tr><td>Est. LTV (5% churn)</td><td style="text-align: right; color: var(--color-indigo); font-weight: 600;">$5,400</td></tr>
+            <tr><td>Est. LTV (3% churn)</td><td style="text-align: right; color: var(--color-emerald); font-weight: 600;">$8,910</td></tr>
+          </table>
+        </div>
+
+        <div class="glass-card glass-card--padded">
+          <h3>LTV:CAC Analysis</h3>
+          <table class="competitive-table" style="margin-top: 1rem;">
+            <thead>
+              <tr><th>Scenario</th><th>LTV</th><th>CAC</th><th>Ratio</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Conservative</td>
+                <td>$5,400</td>
+                <td>$800</td>
+                <td><span class="badge badge--success">6.75:1</span></td>
+              </tr>
+              <tr>
+                <td>Moderate</td>
+                <td>$6,500</td>
+                <td>$650</td>
+                <td><span class="badge badge--success">10:1</span></td>
+              </tr>
+              <tr>
+                <td>Optimistic</td>
+                <td>$8,910</td>
+                <td>$500</td>
+                <td><span class="badge badge--success">17.8:1</span></td>
+              </tr>
+            </tbody>
+          </table>
+          <p style="font-size: 0.75rem; color: var(--color-slate-400); margin-top: 1rem; margin-bottom: 0;">
+            Industry benchmark: 3:1 | Healthcare SaaS average: 4:1
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CAC by Channel -->
+    <section class="content-section" data-reveal>
+      <h2 class="content-section__title">Customer Acquisition Cost by Channel</h2>
+
+      <div class="glass-card glass-card--padded">
+        <table class="competitive-table">
+          <thead>
+            <tr>
+              <th>Channel</th>
+              <th>% of Spend</th>
+              <th>Est. Cost/Customer</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Partner Integrations</td>
+              <td>25%</td>
+              <td style="color: var(--color-emerald);">$150-$200</td>
+              <td>Eyefinity, EHR partnerships</td>
+            </tr>
+            <tr>
+              <td>Trade Shows/Conferences</td>
+              <td>30%</td>
+              <td>$800-$1,200</td>
+              <td>Vision Expo, AOA, state shows</td>
+            </tr>
+            <tr>
+              <td>Digital Marketing</td>
+              <td>20%</td>
+              <td>$400-$600</td>
+              <td>SEO, PPC, content</td>
+            </tr>
+            <tr>
+              <td>Outbound Sales</td>
+              <td>15%</td>
+              <td>$600-$900</td>
+              <td>Direct sales team</td>
+            </tr>
+            <tr>
+              <td>Referral Program</td>
+              <td>10%</td>
+              <td style="color: var(--color-emerald);">$100-$150</td>
+              <td>Customer referrals (lowest CAC)</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="mt-lg" style="padding: 1rem; background: rgba(16, 185, 129, 0.1); border-radius: 8px;">
+          <strong style="color: var(--color-emerald);">Blended CAC Estimate: $500-$800</strong>
+          <span style="color: var(--color-slate-400); font-size: 0.875rem; margin-left: 1rem;">
+            CAC Payback: 2-3 months (vs. 12-18 mo healthcare SaaS benchmark)
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Practice ROI -->
+    <section class="content-section" data-reveal>
+      <h2 class="content-section__title">
+        <span class="icon-box icon-box--teal"><svg class="icon" width="24" height="24"><use href="#icon-bar-chart"/></svg></span>
+        Practice ROI Analysis
+      </h2>
+
+      <div class="grid-2">
+        <div class="glass-card glass-card--padded glass-card--highlight">
+          <h3>Revenue Impact</h3>
+          <table class="competitive-table" style="margin-top: 1rem;">
+            <tr>
+              <td>Average practice CL revenue</td>
+              <td style="text-align: right;">$120,000/year</td>
+            </tr>
+            <tr>
+              <td>DRCL claimed 32% growth</td>
+              <td style="text-align: right; color: var(--color-emerald);">+$38,400/year</td>
+            </tr>
+            <tr>
+              <td>Annual DRCL subscription</td>
+              <td style="text-align: right; color: var(--color-rose);">-$3,240</td>
+            </tr>
+            <tr style="background: rgba(16, 185, 129, 0.1);">
+              <td><strong style="color: var(--color-slate-50);">Net Annual Benefit</strong></td>
+              <td style="text-align: right; color: var(--color-emerald); font-weight: 700; font-size: 1.25rem;">+$35,160</td>
+            </tr>
+          </table>
+          <div class="text-center mt-lg">
+            <div style="font-size: 3rem; font-family: var(--font-display); color: var(--color-emerald);">10.8x</div>
+            <div style="color: var(--color-slate-400);">ROI Multiple</div>
+          </div>
+        </div>
+
+        <div class="glass-card glass-card--padded">
+          <h3>Efficiency Gains</h3>
+          <table class="competitive-table" style="margin-top: 1rem;">
+            <thead>
+              <tr><th>Metric</th><th>Before</th><th>After</th><th>Savings</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Staff time/order</td>
+                <td>15 min</td>
+                <td>15 sec</td>
+                <td style="color: var(--color-emerald);">98%</td>
+              </tr>
+              <tr>
+                <td>Weekly CL admin</td>
+                <td>10 hrs</td>
+                <td>5 hrs</td>
+                <td style="color: var(--color-emerald);">5 hrs</td>
+              </tr>
+              <tr>
+                <td>Staff cost (@$20/hr)</td>
+                <td>$200/wk</td>
+                <td>$100/wk</td>
+                <td style="color: var(--color-emerald);">$5,200/yr</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="mt-lg" style="padding: 1rem; background: rgba(99, 102, 241, 0.1); border-radius: 8px;">
+            <strong style="color: var(--color-indigo);">Total ROI including efficiency:</strong>
+            <p style="color: var(--color-slate-300); margin: 0.5rem 0 0 0; font-size: 0.875rem;">
+              $40,360/year on $3,240 investment = <strong style="color: var(--color-emerald);">12.5x ROI</strong>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Conversion Benchmarks -->
+    <section class="content-section" data-reveal>
+      <h2 class="content-section__title">Funnel Conversion Benchmarks</h2>
+
+      <div class="glass-card glass-card--padded">
+        <table class="competitive-table">
+          <thead>
+            <tr>
+              <th>Stage</th>
+              <th>Industry Benchmark</th>
+              <th>DRCL Target</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Visitor to Lead</td>
+              <td>1-3%</td>
+              <td style="color: var(--color-emerald);">3-5%</td>
+              <td>Niche focus advantage</td>
+            </tr>
+            <tr>
+              <td>Lead to MQL</td>
+              <td>35-47%</td>
+              <td style="color: var(--color-emerald);">40%+</td>
+              <td>Strong qualification</td>
+            </tr>
+            <tr>
+              <td>MQL to SQL</td>
+              <td>15-21%</td>
+              <td style="color: var(--color-emerald);">25%+</td>
+              <td>Healthcare avg is 13% (key bottleneck)</td>
+            </tr>
+            <tr>
+              <td>SQL to Opportunity</td>
+              <td>40-50%</td>
+              <td style="color: var(--color-emerald);">50%+</td>
+              <td>Demo booking rate</td>
+            </tr>
+            <tr>
+              <td>Demo to Close</td>
+              <td>25-32%</td>
+              <td style="color: var(--color-emerald);">30%+</td>
+              <td>Clear ROI story</td>
+            </tr>
+            <tr style="background: rgba(99, 102, 241, 0.1);">
+              <td><strong>Full Funnel</strong></td>
+              <td>0.5-1%</td>
+              <td style="color: var(--color-indigo); font-weight: 600;">1-2%</td>
+              <td>Visitor to customer</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Recommendations -->
+    <section class="content-section" data-reveal>
+      <h2 class="content-section__title">Unit Economics Recommendations</h2>
+
+      <div class="grid-3">
+        <div class="glass-card glass-card--padded">
+          <h4 style="color: var(--color-emerald);">Reduce CAC</h4>
+          <ul style="color: var(--color-slate-300); font-size: 0.875rem; line-height: 2;">
+            <li>Double down on referral program ($150 CAC)</li>
+            <li>Deepen EMR partnership co-marketing</li>
+            <li>Create ROI calculator for self-qualification</li>
+          </ul>
+        </div>
+
+        <div class="glass-card glass-card--padded">
+          <h4 style="color: var(--color-indigo);">Maximize LTV</h4>
+          <ul style="color: var(--color-slate-300); font-size: 0.875rem; line-height: 2;">
+            <li>Target &lt;3% annual churn</li>
+            <li>Implement health scores</li>
+            <li>Develop upsell features</li>
+          </ul>
+        </div>
+
+        <div class="glass-card glass-card--padded">
+          <h4 style="color: var(--color-teal);">Improve Funnel</h4>
+          <ul style="color: var(--color-slate-300); font-size: 0.875rem; line-height: 2;">
+            <li>Focus on MQL to SQL (industry bottleneck)</li>
+            <li>Develop interactive demo (+52% conversion)</li>
+            <li>Case studies by practice type</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__text">DRCL Market Analysis | Generated 2026-01-15</div>
+        <div class="footer__links">
+          <a href="https://drcontactlens.com" class="footer__link" target="_blank">drcontactlens.com</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marketing Strategy | DRCL Market Analysis</title>
+  <meta name="description" content="Marketing strategy for Dr. Contact Lens including channel mix, messaging, and content recommendations.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --color-indigo: #6366f1; --color-rose: #f43f5e; --color-teal: #14b8a6; --color-slate-900: #0f172a; --color-slate-50: #f8fafc; }
+    body { margin: 0; font-family: 'Inter', -apple-system, sans-serif; background: var(--color-slate-900); color: var(--color-slate-50); }
+    .aurora-bg { position: fixed; inset: 0; overflow: hidden; z-index: -1; }
+  </style>
+  <link rel="preload" href="./assets/css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="./assets/css/main.css"></noscript>
+  <script defer src="./assets/js/main.js"></script>
+</head>
+<body>
+  <div class="aurora-bg">
+    <div class="aurora-blob aurora-blob--indigo"></div>
+    <div class="aurora-blob aurora-blob--rose"></div>
+    <div class="aurora-blob aurora-blob--teal"></div>
+  </div>
+
+  <svg style="display: none;">
+    <symbol id="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+    <symbol id="icon-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+    <symbol id="icon-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></symbol>
+    <symbol id="icon-message-circle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></symbol>
+    <symbol id="icon-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+  </svg>
+
+  <nav class="nav">
+    <div class="container nav__container">
+      <a href="index.html" class="nav__logo">
+        <svg class="icon" width="32" height="32"><use href="#icon-target"/></svg>
+        <span>DRCL Analysis</span>
+      </a>
+      <button class="nav__toggle" aria-label="Toggle navigation"><svg class="icon" width="24" height="24"><use href="#icon-menu"/></svg></button>
+      <ul class="nav__links">
+        <li><a href="index.html" class="nav__link">Overview</a></li>
+        <li><a href="executive-summary.html" class="nav__link">Executive Summary</a></li>
+        <li><a href="personas.html" class="nav__link">Personas</a></li>
+        <li><a href="competitive.html" class="nav__link">Competitive</a></li>
+        <li><a href="funnels.html" class="nav__link">Funnels</a></li>
+        <li><a href="marketing.html" class="nav__link nav__link--active">Marketing</a></li>
+        <li><a href="partnerships.html" class="nav__link">Partnerships</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="container">
+      <h1 class="page-header__title" data-reveal>Marketing Strategy</h1>
+      <p class="page-header__subtitle" data-reveal>Channel mix, messaging framework, and content strategy recommendations</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Messaging Framework -->
+    <section class="content-section" data-reveal>
+      <h2 class="content-section__title">
+        <span class="icon-box"><svg class="icon" width="24" height="24"><use href="#icon-message-circle"/></svg></span>
+        Value Propositions (Priority Order)
+      </h2>
+
+      <div class="grid-2">
+        <div class="glass-card glass-card--padded glass-card--highlight">
+          <h3 style="margin-bottom: 1.5rem;">Primary Messages</h3>
+
+          <div style="margin-bottom: 1.5rem;">
+            <div class="flex items-center gap-sm mb-sm">
+              <span class="badge badge--danger">#1</span>
+              <strong style="color: var(--color-slate-50);">Time Savings = Staff Efficiency</strong>
+            </div>
+            <p style="color: var(--color-slate-300); font-size: 0.875rem; margin: 0; padding-left: 2.5rem;">
+              "Reduce CL administration by 50%. 15 minutes to 15 seconds ordering time."
+            </p>
+          </div>
+
+          <div style="margin-bottom: 1.5rem;">
+            <div class="flex items-center gap-sm mb-sm">
+              <span class="badge badge--success">#2</span>
+              <strong style="color: var(--color-slate-50);">Revenue Recapture</strong>
+            </div>
+            <p style="color: var(--color-slate-300); font-size: 0.875rem; margin: 0; padding-left: 2.5rem;">
+              "Keep contact lens sales in-practice. Stop losing patients to 1-800 Contacts and Amazon."
+            </p>
+          </div>
+
+          <div style="margin-bottom: 1.5rem;">
+            <div class="flex items-center gap-sm mb-sm">
+              <span class="badge badge--info">#3</span>
+              <strong style="color: var(--color-slate-50);">Vendor-Agnostic Freedom</strong>
+            </div>
+            <p style="color: var(--color-slate-300); font-size: 0.875rem; margin: 0; padding-left: 2.5rem;">
+              "Order from ANY manufacturer. Not tied to a single distributor."
+            </p>
+          </div>
+
+          <div style="margin-bottom: 1.5rem;">
+            <div class="flex items-center gap-sm mb-sm">
+              <span class="badge" style="background: rgba(148,163,184,0.1); color: #94a3b8;">#4</span>
+              <strong style="color: var(--color-slate-50);">EMR Integration</strong>
+            </div>
+            <p style="color: var(--color-slate-300); font-size: 0.875rem; margin: 0; padding-left: 2.5rem;">
+              "Works with your existing system. RevolutionEHR, Eyefinity, CrystalPM, Officemate."
+            </p>
+          </div>
+
+          <div>
+            <div class="flex items-center gap-sm mb-sm">
+              <span class="badge" style="background: rgba(148,163,184,0.1); color: #94a3b8;">#5</span>
+              <strong style="color: var(--color-slate-50);">Built by ODs</strong>
+            </div>
+            <p style="color: var(--color-slate-300); font-size: 0.875rem; margin: 0; padding-left: 2.5rem;">
+              "Created by optometrists who understand your practice."
+            </p>
+          </div>
+        </div>
+
+        <div class="glass-card glass-card--padded">
+          <h3 style="margin-bottom: 1.5rem;">Pain Points to Address</h3>
+          <ul style="color: var(--color-slate-300); line-height: 2.5; margin: 0; padding-left: 1.25rem;">
+            <li><strong style="color: var(--color-slate-50);">Time drain on staff</strong> - "10 hours/week on CL administration"</li>
+            <li><strong style="color: var(--color-slate-50);">Revenue leakage</strong> - Patients buying from 1-800 Contacts</li>
+            <li><strong style="color: var(--color-slate-50);">Multiple vendor complexity</strong> - Juggling different portals</li>
+            <li><strong style="color: var(--color-slate-50);">Manual processes</strong> - Duplicate entry, sticky notes</li>
+            <li><strong style="color: var(--color-slate-50);">Lack of visibility</strong> - No CL performance analytics</li>
+          </ul>
+
+          <div class="mt-lg" style="padding: 1rem; background: rgba(244, 63, 94, 0.1); border-radius: 8px;">
+            <strong style="color: var(--color-rose); font-size: 0.875rem;">Key Insight:</strong>
+            <p style="color: var(--color-slate-300); font-size: 0.75rem; margin: 0.5rem 0 0 0;">
+              Staffing is the #1 pain point. Lead with staff efficiency messaging over revenue capture.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Channel Mix -->
+    <section class="content-section" data-reveal>
+      <h2 class="content-section__title">
+        <span class="icon-box icon-box--teal"><svg class="icon" width="24" height="24"><use href="#icon-zap"/></svg></span>
+        Recommended Channel Mix
+      </h2>
+
+      <div class="glass-card glass-card--padded mb-lg">
+        <table class="competitive-table">
+          <thead>
+            <tr>
+              <th>Channel</th>
+              <th>Budget %</th>
+              <th>Priority</th>
+              <th>Tactics</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Conference Exhibiting</strong></td>
+              <td style="color: var(--color-indigo); font-weight: 600;">25%</td>
+              <td><span class="badge badge--danger">1</span></td>
+              <td>SECO, Vision Expo, AOA, state meetings</td>
+            </tr>
+            <tr>
+              <td><strong>Content Marketing / SEO</strong></td>
+              <td style="color: var(--color-indigo); font-weight: 600;">15%</td>
+              <td><span class="badge badge--danger">1</span></td>
+              <td>Blog, case studies, ROI calculator</td>
+            </tr>
+            <tr>
+              <td><strong>Industry Publication Ads</strong></td>
+              <td>15%</td>
+              <td><span class="badge badge--success">2</span></td>
+              <td>Review of Optometry, Optometric Management</td>
+            </tr>
+            <tr>
+              <td><strong>EMR Partner Co-marketing</strong></td>
+              <td>10%</td>
+              <td><span class="badge badge--success">2</span></td>
+              <td>Joint webinars, co-branded content</td>
+            </tr>
+            <tr>
+              <td><strong>Buying Group Partnerships</strong></td>
+              <td>10%</td>
+              <td><span class="badge badge--success">2</span></td>
+              <td>PECAA, IDOC, Vision Source</td>
+            </tr>
+            <tr>
+              <td><strong>Webinars / CE Sponsorship</strong></td>
+              <td>10%</td>
+              <td><span class="badge badge--info">3</span></td>
+              <td>Educational content, CE credits</td>
+            </tr>
+            <tr>
+              <td><strong>ODs on Facebook / Communities</strong></td>
+              <td>5%</td>
+              <td><span class="badge badge--danger">1</span></td>
+              <td>Organic engagement, peer discussions</td>
+            </tr>
+            <tr>
+              <td><strong>Email Marketing / Nurture</strong></td>
+              <td>5%</td>
+              <td><span class="badge badge--info">3</span></td>
+              <td>Drip campaigns, reorder reminders</td>
+            </tr>
+            <tr>
+              <td><strong>Paid Search</strong></td>
+              <td>5%</td>
+              <td><span class="badge badge--info">3</span></td>
+              <td>"contact lens ordering software" keywords</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Key Conferences -->
+    <section class="content-section" data-reveal>
+      <h2 class="content-section__title">Key Conferences & Events</h2>
+
+      <div class="grid-3">
+        <div class="glass-card glass-card--padded">
+          <span class="badge badge--danger mb-sm">HIGH PRIORITY</span>
+          <h4>SECO 2026</h4>
+          <p style="color: var(--color-slate-400); font-size: 0.875rem; margin-bottom: 0;">
+            7,500+ professionals. Largest optometry conference. Demo opportunity.
+          </p>
+        </div>
+
+        <div class="glass-card glass-card--padded">
+          <span class="badge badge--danger mb-sm">HIGH PRIORITY</span>
+          <h4>Vision Expo</h4>
+          <p style="color: var(--color-slate-400); font-size: 0.875rem; margin-bottom: 0;">
+            Major industry event. Single annual event in 2026.
+          </p>
+        </div>
+
+        <div class="glass-card glass-card--padded">
+          <span class="badge badge--danger mb-sm">HIGH PRIORITY</span>
+          <h4>AOA Optometry's Meeting</h4>
+          <p style="color: var(--color-slate-400); font-size: 0.875rem; margin-bottom: 0;">
+            3,000+ ODs. Decision-makers attend.
+          </p>
+        </div>
+
+        <div class="glass-card glass-card--padded">
+          <span class="badge badge--success mb-sm">MEDIUM</span>
+          <h4>PECAA Annual Meeting</h4>
+          <p style="color: var(--color-slate-400); font-size: 0.875rem; margin-bottom: 0;">
+            Buying group members. Targeted independents.
+          </p>
+        </div>
+
+        <div class="glass-card glass-card--padded">
+          <span class="badge badge--success mb-sm">MEDIUM</span>
+          <h4>Vision Source Exchange</h4>
+          <p style="color: var(--color-slate-400); font-size: 0.875rem; margin-bottom: 0;">
+            3,300+ practices. Vendor partnerships.
+          </p>
+        </div>
+
+        <div class="glass-card glass-card--padded">
+          <span class="badge badge--success mb-sm">MEDIUM</span>
+          <h4>State Association Meetings</h4>
+          <p style="color: var(--color-slate-400); font-size: 0.875rem; margin-bottom: 0;">
+            Regional targeting. Solo practice owners attend.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Online Communities -->
+    <section class="content-section" data-reveal>
+      <h2 class="content-section__title">
+        <span class="icon-box icon-box--rose"><svg class="icon" width="24" height="24"><use href="#icon-users"/></svg></span>
+        Online Communities
+      </h2>
+
+      <div class="grid-2">
+        <div class="glass-card glass-card--padded">
+          <h4 style="color: var(--color-indigo);">ODs on Facebook</h4>
+          <p style="color: var(--color-slate-300); font-size: 0.875rem;">
+            <strong>25,000+ members</strong> - Peer recommendations drive decisions. Focus on organic engagement and helpful discussions.
+          </p>
+          <span class="badge badge--danger">Primary Channel</span>
+        </div>
+
+        <div class="glass-card glass-card--padded">
+          <h4 style="color: var(--color-teal);">ODwire.org</h4>
+          <p style="color: var(--color-slate-300); font-size: 0.875rem;">
+            Active practitioners. Practice management discussions. Good for reputation building.
+          </p>
+          <span class="badge badge--success">Secondary</span>
+        </div>
+
+        <div class="glass-card glass-card--padded">
+          <h4>OptiBoard</h4>
+          <p style="color: var(--color-slate-300); font-size: 0.875rem;">
+            Premier optometry community. Technical discussions. Good for credibility.
+          </p>
+          <span class="badge badge--info">Tertiary</span>
+        </div>
+
+        <div class="glass-card glass-card--padded">
+          <h4>r/optometry (Reddit)</h4>
+          <p style="color: var(--color-slate-300); font-size: 0.875rem;">
+            Growing community. Reaches younger ODs and new practice owners.
+          </p>
+          <span class="badge badge--info">Tertiary</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Wins -->
+    <section class="content-section" data-reveal>
+      <h2 class="content-section__title">Quick Wins (0-3 Months)</h2>
+
+      <div class="glass-card glass-card--padded">
+        <ol style="color: var(--color-slate-300); line-height: 2.5; margin: 0; padding-left: 1.5rem;">
+          <li><strong style="color: var(--color-slate-50);">Establish presence in ODs on Facebook</strong> - Engage authentically, provide value</li>
+          <li><strong style="color: var(--color-slate-50);">Develop 3-5 case studies with ROI metrics</strong> - Solo, multi-location, specialty</li>
+          <li><strong style="color: var(--color-slate-50);">Secure speaking/demo slot at next major conference</strong> - SECO or Vision Expo</li>
+          <li><strong style="color: var(--color-slate-50);">Optimize website for "contact lens ordering software" keywords</strong> - SEO foundation</li>
+          <li><strong style="color: var(--color-slate-50);">Launch referral program</strong> - Lowest CAC channel ($150)</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Influencers -->
+    <section class="content-section" data-reveal>
+      <h2 class="content-section__title">Key Opinion Leaders</h2>
+
+      <div class="grid-4">
+        <div class="glass-card glass-card--padded text-center">
+          <h4 style="font-size: 1rem;">Dr. Alan Glazier</h4>
+          <p style="color: var(--color-slate-400); font-size: 0.75rem; margin: 0;">ODs on Facebook founder<br>Technology thought leader</p>
+        </div>
+
+        <div class="glass-card glass-card--padded text-center">
+          <h4 style="font-size: 1rem;">Dr. Scot Morris</h4>
+          <p style="color: var(--color-slate-400); font-size: 0.75rem; margin: 0;">Educator, consultant<br>Practice management</p>
+        </div>
+
+        <div class="glass-card glass-card--padded text-center">
+          <h4 style="font-size: 1rem;">Dr. Arian Fartash</h4>
+          <p style="color: var(--color-slate-400); font-size: 0.75rem; margin: 0;">GlamOptometrist<br>Social media influence</p>
+        </div>
+
+        <div class="glass-card glass-card--padded text-center">
+          <h4 style="font-size: 1rem;">Dr. Lauretta Justin</h4>
+          <p style="color: var(--color-slate-400); font-size: 0.75rem; margin: 0;">Optometry Divas founder<br>Community builder</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__text">DRCL Market Analysis | Generated 2026-01-15</div>
+        <div class="footer__links">
+          <a href="https://drcontactlens.com" class="footer__link" target="_blank">drcontactlens.com</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

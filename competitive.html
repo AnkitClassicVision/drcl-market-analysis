@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Competitive Analysis | DRCL Market Analysis</title>
+  <meta name="description" content="Competitive analysis of Dr. Contact Lens vs CLX, ABB ABBY, Otto, Arrellio and indirect competitors.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --color-indigo: #6366f1; --color-rose: #f43f5e; --color-teal: #14b8a6; --color-slate-900: #0f172a; --color-slate-50: #f8fafc; }
+    body { margin: 0; font-family: 'Inter', -apple-system, sans-serif; background: var(--color-slate-900); color: var(--color-slate-50); }
+    .aurora-bg { position: fixed; inset: 0; overflow: hidden; z-index: -1; }
+  </style>
+  <link rel="preload" href="./assets/css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="./assets/css/main.css"></noscript>
+  <script defer src="./assets/js/main.js"></script>
+</head>
+<body>
+  <div class="aurora-bg">
+    <div class="aurora-blob aurora-blob--indigo"></div>
+    <div class="aurora-blob aurora-blob--rose"></div>
+    <div class="aurora-blob aurora-blob--teal"></div>
+  </div>
+
+  <svg style="display: none;">
+    <symbol id="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+    <symbol id="icon-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+    <symbol id="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="20 6 9 17 4 12"/></symbol>
+    <symbol id="icon-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol>
+  </svg>
+
+  <nav class="nav">
+    <div class="container nav__container">
+      <a href="index.html" class="nav__logo">
+        <svg class="icon" width="32" height="32"><use href="#icon-target"/></svg>
+        <span>DRCL Analysis</span>
+      </a>
+      <button class="nav__toggle" aria-label="Toggle navigation"><svg class="icon" width="24" height="24"><use href="#icon-menu"/></svg></button>
+      <ul class="nav__links">
+        <li><a href="index.html" class="nav__link">Overview</a></li>
+        <li><a href="executive-summary.html" class="nav__link">Executive Summary</a></li>
+        <li><a href="personas.html" class="nav__link">Personas</a></li>
+        <li><a href="competitive.html" class="nav__link nav__link--active">Competitive</a></li>
+        <li><a href="funnels.html" class="nav__link">Funnels</a></li>
+        <li><a href="marketing.html" class="nav__link">Marketing</a></li>
+        <li><a href="partnerships.html" class="nav__link">Partnerships</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="container">
+      <h1 class="page-header__title" data-reveal>Competitive Analysis</h1>
+      <p class="page-header__subtitle" data-reveal>Deep dive into CLX, ABB ABBY, Otto, Arrellio and indirect threats</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Competitive Matrix -->
+    <section class="content-section" data-reveal>
+      <h2 class="content-section__title">
+        <span class="icon-box"><svg class="icon" width="24" height="24"><use href="#icon-target"/></svg></span>
+        Competitive Matrix
+      </h2>
+
+      <div class="glass-card glass-card--padded" style="overflow-x: auto;">
+        <table class="competitive-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>DRCL</th>
+              <th>CLX (HELIX)</th>
+              <th>ABB ABBY</th>
+              <th>Otto</th>
+              <th>Arrellio</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Primary Function</td>
+              <td>CL Ordering</td>
+              <td>CL Ordering</td>
+              <td>CL Ordering + Analytics</td>
+              <td>CL Ordering + E-commerce</td>
+              <td>CL Ordering</td>
+            </tr>
+            <tr>
+              <td>Pricing</td>
+              <td><strong style="color: var(--color-slate-50);">~$270/mo</strong></td>
+              <td>$99-$199/mo</td>
+              <td style="color: var(--color-emerald);">FREE</td>
+              <td>Premium (undisclosed)</td>
+              <td>Undisclosed</td>
+            </tr>
+            <tr>
+              <td>Vendor Agnostic</td>
+              <td><span class="check-icon"><svg width="20" height="20"><use href="#icon-check"/></svg></span></td>
+              <td><span style="color: #facc15;">Partial*</span></td>
+              <td><span class="x-icon"><svg width="20" height="20"><use href="#icon-x"/></svg></span></td>
+              <td><span class="check-icon"><svg width="20" height="20"><use href="#icon-check"/></svg></span></td>
+              <td><span class="check-icon"><svg width="20" height="20"><use href="#icon-check"/></svg></span></td>
+            </tr>
+            <tr>
+              <td>RevolutionEHR Integration</td>
+              <td><span class="check-icon"><svg width="20" height="20"><use href="#icon-check"/></svg></span></td>
+              <td>Limited</td>
+              <td><span class="check-icon"><svg width="20" height="20"><use href="#icon-check"/></svg></span></td>
+              <td>Limited</td>
+              <td><span class="check-icon"><svg width="20" height="20"><use href="#icon-check"/></svg></span></td>
+            </tr>
+            <tr>
+              <td>Eyefinity Integration</td>
+              <td><span class="check-icon"><svg width="20" height="20"><use href="#icon-check"/></svg></span></td>
+              <td><span class="check-icon"><svg width="20" height="20"><use href="#icon-check"/></svg></span></td>
+              <td><span class="check-icon"><svg width="20" height="20"><use href="#icon-check"/></svg></span></td>
+              <td>Limited</td>
+              <td><span class="check-icon"><svg width="20" height="20"><use href="#icon-check"/></svg></span></td>
+            </tr>
+            <tr>
+              <td>Patient Subscription</td>
+              <td><span class="check-icon"><svg width="20" height="20"><use href="#icon-check"/></svg></span></td>
+              <td><span class="check-icon"><svg width="20" height="20"><use href="#icon-check"/></svg></span></td>
+              <td>Limited</td>
+              <td><span class="check-icon"><svg width="20" height="20"><use href="#icon-check"/></svg></span></td>
+              <td><span class="check-icon"><svg width="20" height="20"><use href="#icon-check"/></svg></span></td>
+            </tr>
+            <tr>
+              <td>Price Comparison Tool</td>
+              <td>Unknown</td>
+              <td><span class="check-icon"><svg width="20" height="20"><use href="#icon-check"/></svg></span></td>
+              <td>Digital Price Monitor</td>
+              <td><span class="check-icon"><svg width="20" height="20"><use href="#icon-check"/></svg></span></td>
+              <td><span class="check-icon"><svg width="20" height="20"><use href="#icon-check"/></svg></span></td>
+            </tr>
+            <tr>
+              <td>Corporate Ownership</td>
+              <td style="color: var(--color-emerald);">Independent</td>
+              <td style="color: var(--color-rose);">EssilorLuxottica</td>
+              <td>ABB Optical</td>
+              <td style="color: var(--color-emerald);">Independent</td>
+              <td>VC-backed ($2.6M)</td>
+            </tr>
+            <tr>
+              <td>Market Track Record</td>
+              <td><strong>200M+ lenses</strong></td>
+              <td>10+ years</td>
+              <td>Largest distributor</td>
+              <td>4 years, 700+ clinics</td>
+              <td>Early stage</td>
+            </tr>
+          </tbody>
+        </table>
+        <p style="font-size: 0.75rem; color: var(--color-slate-400); margin-top: 1rem; margin-bottom: 0;">
+          *CLX owned by EssilorLuxottica may raise manufacturer bias concerns despite claims of neutrality
+        </p>
+      </div>
+    </section>
+
+    <!-- Direct Competitors -->
+    <section class="content-section" data-reveal>
+      <h2 class="content-section__title">Direct Competitors</h2>
+
+      <div class="grid-2">
+        <!-- CLX -->
+        <div class="glass-card glass-card--padded">
+          <div class="flex items-center gap-md mb-md">
+            <span class="badge badge--danger">Critical Threat</span>
+            <span style="font-size: 0.75rem; color: var(--color-slate-400);">EssilorLuxottica HELIX</span>
+          </div>
+          <h3>CLX System</h3>
+          <p style="color: var(--color-slate-300); font-size: 0.875rem;">
+            Cloud-based CL ordering with white-label e-commerce. Part of $90B+ EssilorLuxottica's HELIX ecosystem.
+          </p>
+          <div class="grid-2 gap-sm mt-md" style="font-size: 0.875rem;">
+            <div>
+              <strong style="color: var(--color-slate-50);">Pricing</strong>
+              <p style="color: var(--color-slate-400); margin: 0;">$99-199/mo (Vision Source: $99)</p>
+            </div>
+            <div>
+              <strong style="color: var(--color-slate-50);">Strengths</strong>
+              <p style="color: var(--color-slate-400); margin: 0;">Corporate backing, 10+ years, HELIX ecosystem</p>
+            </div>
+          </div>
+          <div class="mt-md" style="padding: 0.75rem; background: rgba(99, 102, 241, 0.1); border-radius: 8px;">
+            <strong style="color: var(--color-indigo); font-size: 0.875rem;">DRCL Positioning:</strong>
+            <p style="color: var(--color-slate-300); font-size: 0.75rem; margin: 0.5rem 0 0 0;">
+              "Independent alternative to corporate control. Your data stays yours."
+            </p>
+          </div>
+        </div>
+
+        <!-- ABB ABBY -->
+        <div class="glass-card glass-card--padded">
+          <div class="flex items-center gap-md mb-md">
+            <span class="badge badge--danger">Critical Threat</span>
+            <span style="font-size: 0.75rem; color: var(--color-slate-400);">Free Platform</span>
+          </div>
+          <h3>ABB ABBY</h3>
+          <p style="color: var(--color-slate-300); font-size: 0.875rem;">
+            FREE patient ordering portal from the largest U.S. contact lens distributor. Same-day shipping on most soft CLs.
+          </p>
+          <div class="grid-2 gap-sm mt-md" style="font-size: 0.875rem;">
+            <div>
+              <strong style="color: var(--color-slate-50);">Pricing</strong>
+              <p style="color: var(--color-emerald); margin: 0;">FREE</p>
+            </div>
+            <div>
+              <strong style="color: var(--color-slate-50);">Weakness</strong>
+              <p style="color: var(--color-slate-400); margin: 0;">Requires ABB relationship (not vendor-agnostic)</p>
+            </div>
+          </div>
+          <div class="mt-md" style="padding: 0.75rem; background: rgba(99, 102, 241, 0.1); border-radius: 8px;">
+            <strong style="color: var(--color-indigo); font-size: 0.875rem;">DRCL Positioning:</strong>
+            <p style="color: var(--color-slate-300); font-size: 0.75rem; margin: 0.5rem 0 0 0;">
+              "Premium features beyond free ordering. Full-service support, advanced analytics."
+            </p>
+          </div>
+        </div>
+
+        <!-- Otto -->
+        <div class="glass-card glass-card--padded">
+          <div class="flex items-center gap-md mb-md">
+            <span class="badge badge--warning">Medium Threat</span>
+            <span style="font-size: 0.75rem; color: var(--color-slate-400);">Canada-based</span>
+          </div>
+          <h3>Otto Optics</h3>
+          <p style="color: var(--color-slate-300); font-size: 0.875rem;">
+            Custom-branded online store with multi-product support (contacts, vitamins, drops, frames). Setup in 20 minutes.
+          </p>
+          <div class="grid-2 gap-sm mt-md" style="font-size: 0.875rem;">
+            <div>
+              <strong style="color: var(--color-slate-50);">Traction</strong>
+              <p style="color: var(--color-slate-400); margin: 0;">700+ clinics, $140M+ orders routed</p>
+            </div>
+            <div>
+              <strong style="color: var(--color-slate-50);">Differentiator</strong>
+              <p style="color: var(--color-slate-400); margin: 0;">Daily competitive price scraping</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Arrellio -->
+        <div class="glass-card glass-card--padded">
+          <div class="flex items-center gap-md mb-md">
+            <span class="badge badge--warning">Medium-High Threat</span>
+            <span style="font-size: 0.75rem; color: var(--color-slate-400);">VC-backed Startup</span>
+          </div>
+          <h3>Arrellio</h3>
+          <p style="color: var(--color-slate-300); font-size: 0.875rem;">
+            Contact lens "operating system" with RevolutionEHR and Eyefinity partnerships. $2.6M seed funding (Feb 2025).
+          </p>
+          <div class="grid-2 gap-sm mt-md" style="font-size: 0.875rem;">
+            <div>
+              <strong style="color: var(--color-slate-50);">Results</strong>
+              <p style="color: var(--color-slate-400); margin: 0;">26% increase in CL sales (case study)</p>
+            </div>
+            <div>
+              <strong style="color: var(--color-slate-50);">Weakness</strong>
+              <p style="color: var(--color-slate-400); margin: 0;">Early stage, less proven</p>
+            </div>
+          </div>
+          <div class="mt-md" style="padding: 0.75rem; background: rgba(99, 102, 241, 0.1); border-radius: 8px;">
+            <strong style="color: var(--color-indigo); font-size: 0.875rem;">DRCL Positioning:</strong>
+            <p style="color: var(--color-slate-300); font-size: 0.75rem; margin: 0.5rem 0 0 0;">
+              "Proven track record vs startup risk. 200M+ lenses processed, 3x Inc 5000."
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Indirect Competitors -->
+    <section class="content-section" data-reveal>
+      <h2 class="content-section__title">Indirect Competitors (Patient Leakage)</h2>
+
+      <div class="grid-3">
+        <div class="glass-card glass-card--padded">
+          <h4 style="color: var(--color-rose);">1-800 Contacts</h4>
+          <p style="color: var(--color-slate-400); font-size: 0.875rem;">
+            ~5% of total CL market. 60% of orders use passive verification. 63% of ODs express concern.
+          </p>
+          <span class="badge badge--danger">High Threat</span>
+        </div>
+
+        <div class="glass-card glass-card--padded">
+          <h4 style="color: var(--color-rose);">Costco Optical</h4>
+          <p style="color: var(--color-slate-400); font-size: 0.875rem;">
+            Kirkland Signature CLs (CooperVision MyDay rebranded) lock patients into Costco-only purchasing.
+          </p>
+          <span class="badge badge--danger">High Threat</span>
+        </div>
+
+        <div class="glass-card glass-card--padded">
+          <h4 style="color: #facc15;">Amazon Contact Lenses</h4>
+          <p style="color: var(--color-slate-400); font-size: 0.875rem;">
+            Prime shipping attracts patients, but prescription verification creates friction.
+          </p>
+          <span class="badge badge--warning">Medium Threat</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Competitive Insights -->
+    <section class="content-section" data-reveal>
+      <h2 class="content-section__title">Key Competitive Insights</h2>
+
+      <div class="glass-card glass-card--padded glass-card--highlight">
+        <div class="grid-2">
+          <div>
+            <h4 style="color: var(--color-emerald);">DRCL Advantages</h4>
+            <ul style="color: var(--color-slate-300); font-size: 0.875rem; line-height: 2;">
+              <li><strong style="color: var(--color-slate-50);">True vendor independence</strong> - Not tied to any distributor</li>
+              <li><strong style="color: var(--color-slate-50);">Founded by ODs</strong> - Trust and credibility</li>
+              <li><strong style="color: var(--color-slate-50);">Proven track record</strong> - 200M+ lenses, 3x Inc 5000</li>
+              <li><strong style="color: var(--color-slate-50);">No corporate agenda</strong> - vs EssilorLuxottica backing</li>
+            </ul>
+          </div>
+          <div>
+            <h4 style="color: var(--color-rose);">DRCL Vulnerabilities</h4>
+            <ul style="color: var(--color-slate-300); font-size: 0.875rem; line-height: 2;">
+              <li><strong style="color: var(--color-slate-50);">$270/mo vs FREE</strong> - ABB ABBY price pressure</li>
+              <li><strong style="color: var(--color-slate-50);">Limited EMR integrations</strong> - Only 5 listed</li>
+              <li><strong style="color: var(--color-slate-50);">Vendor-agnostic commoditized</strong> - Others claim same</li>
+              <li><strong style="color: var(--color-slate-50);">Acquisition uncertainty</strong> - Reported in process</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__text">DRCL Market Analysis | Generated 2026-01-15</div>
+        <div class="footer__links">
+          <a href="https://drcontactlens.com" class="footer__link" target="_blank">drcontactlens.com</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
