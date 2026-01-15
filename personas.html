@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Buyer Personas | DRCL Market Analysis</title>
-  <meta name="description" content="6 detailed buyer personas for Dr. Contact Lens with demographics, pain points, and messaging recommendations.">
+  <meta name="description" content="6 detailed buyer personas for Dr. Contact Lens with demographics, pain points, outreach channels, and messaging recommendations.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
@@ -16,6 +16,43 @@
   <link rel="preload" href="./assets/css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="./assets/css/main.css"></noscript>
   <script defer src="./assets/js/main.js"></script>
+  <style>
+    .persona-full { margin-bottom: 4rem; }
+    .persona-full__header { display: flex; gap: 2rem; align-items: flex-start; margin-bottom: 2rem; flex-wrap: wrap; }
+    .persona-full__avatar { width: 140px; height: 140px; border-radius: 50%; border: 4px solid white; box-shadow: 0 8px 30px rgba(0,0,0,0.3); object-fit: cover; flex-shrink: 0; }
+    .persona-full__title-area { flex: 1; min-width: 250px; }
+    .persona-full__name { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 0.25rem; }
+    .persona-full__role { color: var(--color-indigo); font-size: 1.125rem; margin-bottom: 0.5rem; }
+    .persona-full__location { color: #94a3b8; font-size: 0.875rem; }
+    .persona-full__quote { font-style: italic; color: #cbd5e1; font-size: 1.125rem; padding: 1rem 1.5rem; border-left: 3px solid var(--color-indigo); background: rgba(99,102,241,0.05); border-radius: 0 8px 8px 0; margin: 1.5rem 0; }
+    .persona-grid-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+    .persona-mini-stat { background: rgba(255,255,255,0.03); padding: 1rem; border-radius: 8px; text-align: center; }
+    .persona-mini-stat__value { font-size: 1.5rem; font-weight: 700; color: #f8fafc; }
+    .persona-mini-stat__label { font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em; }
+    .persona-section { margin: 2rem 0; }
+    .persona-section__title { font-size: 1rem; font-weight: 600; color: var(--color-indigo); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+    .persona-section__title::before { content: ''; width: 4px; height: 16px; background: var(--color-indigo); border-radius: 2px; }
+    .channel-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .channel-pill { background: rgba(99,102,241,0.1); color: var(--color-indigo); padding: 0.5rem 1rem; border-radius: 9999px; font-size: 0.875rem; font-weight: 500; }
+    .channel-pill--pub { background: rgba(244,63,94,0.1); color: var(--color-rose); }
+    .channel-pill--conf { background: rgba(20,184,166,0.1); color: var(--color-teal); }
+    .channel-pill--comm { background: rgba(250,204,21,0.1); color: #facc15; }
+    .objection-item { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 1rem; margin-bottom: 0.75rem; }
+    .objection-item__q { color: var(--color-rose); font-weight: 500; margin-bottom: 0.5rem; }
+    .objection-item__a { color: #cbd5e1; font-size: 0.875rem; }
+    .message-box { background: linear-gradient(135deg, rgba(99,102,241,0.1), rgba(244,63,94,0.05)); border: 1px solid rgba(99,102,241,0.2); border-radius: 12px; padding: 1.5rem; }
+    .message-box__label { font-size: 0.75rem; color: var(--color-indigo); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem; }
+    .message-box__text { font-size: 1.125rem; color: #f8fafc; line-height: 1.6; }
+    .two-col { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+    .info-list { list-style: none; padding: 0; margin: 0; }
+    .info-list li { padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); color: #cbd5e1; font-size: 0.875rem; display: flex; justify-content: space-between; }
+    .info-list li strong { color: #f8fafc; }
+    .priority-badge { display: inline-block; padding: 0.5rem 1rem; border-radius: 9999px; font-size: 0.875rem; font-weight: 600; text-transform: uppercase; }
+    .priority-badge--highest { background: rgba(244,63,94,0.15); color: var(--color-rose); }
+    .priority-badge--high { background: rgba(16,185,129,0.15); color: #10b981; }
+    .priority-badge--medium { background: rgba(99,102,241,0.15); color: var(--color-indigo); }
+    .priority-badge--low { background: rgba(148,163,184,0.15); color: #94a3b8; }
+  </style>
 </head>
 <body>
   <div class="aurora-bg">
@@ -28,6 +65,8 @@
     <symbol id="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
     <symbol id="icon-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
     <symbol id="icon-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+    <symbol id="icon-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+    <symbol id="icon-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
   </svg>
 
   <nav class="nav">
@@ -52,7 +91,7 @@
   <header class="page-header">
     <div class="container">
       <h1 class="page-header__title" data-reveal>Buyer Personas</h1>
-      <p class="page-header__subtitle" data-reveal>6 detailed personas with demographics, pain points, LTV/CAC, and messaging recommendations</p>
+      <p class="page-header__subtitle" data-reveal>6 detailed personas with demographics, outreach channels, objection handling, and marketing playbooks</p>
     </div>
   </header>
 
@@ -72,51 +111,58 @@
                 <th>Persona</th>
                 <th>Market Size</th>
                 <th>ACV Potential</th>
-                <th>Sales Ease</th>
+                <th>Sales Cycle</th>
+                <th>Best Channel</th>
                 <th>Priority</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Multi-Location Leader (James)</td>
-                <td>Growing</td>
+                <td><strong>Multi-Location Leader</strong> (James)</td>
+                <td>Growing segment</td>
                 <td>$18-36K</td>
-                <td>Medium-Hard</td>
+                <td>90-120 days</td>
+                <td>Direct outreach, PE networks</td>
                 <td><span class="badge badge--danger">HIGHEST</span></td>
               </tr>
               <tr>
-                <td>Solo Practice Owner (Sarah)</td>
+                <td><strong>Solo Practice Owner</strong> (Sarah)</td>
                 <td>62% of practices</td>
                 <td>$3,240</td>
-                <td>Medium</td>
+                <td>45-60 days</td>
+                <td>State conferences, peer referral</td>
                 <td><span class="badge badge--success">HIGH</span></td>
               </tr>
               <tr>
-                <td>Practice Manager (Jennifer)</td>
+                <td><strong>Practice Manager</strong> (Jennifer)</td>
                 <td>40% decision influence</td>
                 <td>$3,240</td>
-                <td>High</td>
+                <td>30-45 days</td>
+                <td>Facebook groups, content</td>
                 <td><span class="badge badge--success">HIGH</span></td>
               </tr>
               <tr>
-                <td>New Practice Owner (Michael)</td>
+                <td><strong>New Practice Owner</strong> (Michael)</td>
                 <td>10% of market</td>
-                <td>$3,240 (growing)</td>
-                <td>High</td>
+                <td>$3,240+</td>
+                <td>14-30 days</td>
+                <td>Content, new OD programs</td>
                 <td><span class="badge badge--info">MEDIUM-HIGH</span></td>
               </tr>
               <tr>
-                <td>Tech-Savvy Innovator (Kevin)</td>
+                <td><strong>Tech-Savvy Innovator</strong> (Kevin)</td>
                 <td>5% specialty</td>
                 <td>$5,000</td>
-                <td>Easy</td>
+                <td>7-14 days</td>
+                <td>Specialty conferences, KOLs</td>
                 <td><span class="badge badge--info">MEDIUM-HIGH</span></td>
               </tr>
               <tr>
-                <td>Corporate-Employed OD (Amanda)</td>
+                <td><strong>Corporate-Employed OD</strong> (Amanda)</td>
                 <td>25% of ODs</td>
                 <td>$0 (future)</td>
-                <td>N/A</td>
+                <td>5-7 years</td>
+                <td>Educational content nurture</td>
                 <td><span class="badge" style="background: rgba(148,163,184,0.1); color: #94a3b8;">LOW (nurture)</span></td>
               </tr>
             </tbody>
@@ -125,170 +171,656 @@
       </div>
     </section>
 
-    <!-- Persona Cards -->
-    <section class="content-section">
-      <div class="persona-grid">
-        <!-- Persona 1: Dr. Sarah Mitchell -->
-        <div class="glass-card persona-card" data-reveal>
-          <div class="persona-card__header">
-            <div style="width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, var(--color-indigo), var(--color-rose)); display: flex; align-items: center; justify-content: center; border: 3px solid white; box-shadow: var(--shadow-soft);">
-              <span style="font-size: 2rem; color: white;">SM</span>
-            </div>
-            <div class="persona-card__info">
-              <div class="persona-card__name">Dr. Sarah Mitchell</div>
-              <div class="persona-card__role">Solo Practice Owner</div>
-            </div>
+    <!-- ========== PERSONA 1: Dr. Sarah Mitchell ========== -->
+    <section class="persona-full glass-card glass-card--padded" data-reveal>
+      <div class="persona-full__header">
+        <img src="./assets/images/personas/sarah-mitchell.png" alt="Dr. Sarah Mitchell" class="persona-full__avatar">
+        <div class="persona-full__title-area">
+          <h2 class="persona-full__name">Dr. Sarah Mitchell</h2>
+          <div class="persona-full__role">Solo Practice Owner</div>
+          <div class="persona-full__location">Indianapolis, IN (Suburban Midwest)</div>
+          <span class="priority-badge priority-badge--high" style="margin-top: 0.75rem;">HIGH PRIORITY</span>
+        </div>
+      </div>
+
+      <div class="persona-full__quote">
+        "I don't have time to learn another system. My staff is already overwhelmed."
+      </div>
+
+      <div class="persona-grid-stats">
+        <div class="persona-mini-stat"><div class="persona-mini-stat__value">52</div><div class="persona-mini-stat__label">Age</div></div>
+        <div class="persona-mini-stat"><div class="persona-mini-stat__value">24 yrs</div><div class="persona-mini-stat__label">Experience</div></div>
+        <div class="persona-mini-stat"><div class="persona-mini-stat__value">$850-950K</div><div class="persona-mini-stat__label">Annual Revenue</div></div>
+        <div class="persona-mini-stat"><div class="persona-mini-stat__value">4</div><div class="persona-mini-stat__label">Staff Size</div></div>
+        <div class="persona-mini-stat"><div class="persona-mini-stat__value">$3,240</div><div class="persona-mini-stat__label">Est. ACV</div></div>
+        <div class="persona-mini-stat"><div class="persona-mini-stat__value">45-60 days</div><div class="persona-mini-stat__label">Sales Cycle</div></div>
+      </div>
+
+      <div class="two-col">
+        <div>
+          <div class="persona-section">
+            <div class="persona-section__title">Pain Points</div>
+            <ul class="info-list">
+              <li>30% of CL patients buying from 1-800 Contacts or Amazon</li>
+              <li>Staff spending 8-10 hours/week on manual CL ordering</li>
+              <li>Limited technology expertise; fears complex implementations</li>
+              <li>Competing with nearby retail chains (LensCrafters, Costco)</li>
+            </ul>
           </div>
-          <p class="persona-card__quote">"I don't have time to learn another system."</p>
-          <div class="persona-card__stats">
-            <div class="persona-stat"><div class="persona-stat__value">$3,240</div><div class="persona-stat__label">Est. ACV</div></div>
-            <div class="persona-stat"><div class="persona-stat__value">45-60 days</div><div class="persona-stat__label">Sales Cycle</div></div>
-            <div class="persona-stat"><div class="persona-stat__value">52</div><div class="persona-stat__label">Age</div></div>
-            <div class="persona-stat"><div class="persona-stat__value">$850-950K</div><div class="persona-stat__label">Revenue</div></div>
+
+          <div class="persona-section">
+            <div class="persona-section__title">Goals & Motivations</div>
+            <ul class="info-list">
+              <li>Maintain profitability to fund retirement (10-12 years out)</li>
+              <li>Reduce administrative burden on herself and small staff</li>
+              <li>Compete effectively with retail optical chains</li>
+            </ul>
           </div>
-          <p style="font-size: 0.875rem; color: var(--color-slate-400); margin-top: 1rem;">
-            <strong>Pain Points:</strong> 30% CL patients buying online, 8-10 hrs/week manual ordering, fears complex implementations
-          </p>
-          <p style="font-size: 0.875rem; color: var(--color-indigo); margin-bottom: 0;">
-            <strong>Message:</strong> "Keep your contact lens revenue in YOUR practice. Set it up in a week, see results in 30 days."
-          </p>
-          <span class="persona-card__priority persona-card__priority--high">HIGH PRIORITY</span>
+
+          <div class="persona-section">
+            <div class="persona-section__title">Technology Profile</div>
+            <ul class="info-list">
+              <li><strong>EMR:</strong> CrystalPM (older version)</li>
+              <li><strong>Tech Comfort:</strong> Moderate</li>
+              <li><strong>Innovation:</strong> Cautious; needs proof first</li>
+            </ul>
+          </div>
         </div>
 
-        <!-- Persona 2: Dr. James Chen -->
-        <div class="glass-card persona-card" data-reveal>
-          <div class="persona-card__header">
-            <div style="width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, var(--color-teal), var(--color-indigo)); display: flex; align-items: center; justify-content: center; border: 3px solid white; box-shadow: var(--shadow-soft);">
-              <span style="font-size: 2rem; color: white;">JC</span>
-            </div>
-            <div class="persona-card__info">
-              <div class="persona-card__name">Dr. James Chen</div>
-              <div class="persona-card__role">Multi-Location Group Leader</div>
+        <div>
+          <div class="persona-section">
+            <div class="persona-section__title">Buying Behavior</div>
+            <ul class="info-list">
+              <li><strong>Authority:</strong> Full decision-maker</li>
+              <li><strong>Process:</strong> Peer recommendations, demo, 30-day consideration</li>
+              <li><strong>Influencers:</strong> Trusted colleagues, state association</li>
+              <li><strong>Budget:</strong> Moderate; ROI must be clear in 3 months</li>
+            </ul>
+          </div>
+
+          <div class="persona-section">
+            <div class="persona-section__title">How to Reach Her</div>
+            <div class="channel-pills">
+              <span class="channel-pill--pub">Review of Optometry</span>
+              <span class="channel-pill--pub">State Newsletter</span>
+              <span class="channel-pill--conf">State AOA Meeting</span>
+              <span class="channel-pill--comm">ODs on Facebook (lurks)</span>
+              <span class="channel-pill">Email then Phone</span>
             </div>
           </div>
-          <p class="persona-card__quote">"Can it handle our volume across all locations?"</p>
-          <div class="persona-card__stats">
-            <div class="persona-stat"><div class="persona-stat__value">$18-36K</div><div class="persona-stat__label">Est. ACV</div></div>
-            <div class="persona-stat"><div class="persona-stat__value">90-120 days</div><div class="persona-stat__label">Sales Cycle</div></div>
-            <div class="persona-stat"><div class="persona-stat__value">48</div><div class="persona-stat__label">Age</div></div>
-            <div class="persona-stat"><div class="persona-stat__value">$8.5-9.5M</div><div class="persona-stat__label">Revenue</div></div>
+
+          <div class="persona-section">
+            <div class="persona-section__title">Preferred Contact Method</div>
+            <p style="color: #cbd5e1; font-size: 0.875rem; margin: 0;">
+              <svg class="icon" width="16" height="16" style="vertical-align: middle; margin-right: 0.5rem;"><use href="#icon-mail"/></svg>
+              Email first with clear ROI data, then follow-up phone call to schedule demo
+            </p>
           </div>
-          <p style="font-size: 0.875rem; color: var(--color-slate-400); margin-top: 1rem;">
-            <strong>Pain Points:</strong> Inconsistent processes across 8 locations, no unified reporting, staff turnover = constant retraining
-          </p>
-          <p style="font-size: 0.875rem; color: var(--color-indigo); margin-bottom: 0;">
-            <strong>Message:</strong> "One platform, all 8 locations. Real-time CL performance dashboards. Standardize operations for scale."
-          </p>
-          <span class="persona-card__priority" style="background: rgba(244,63,94,0.1); color: var(--color-rose);">HIGHEST PRIORITY</span>
+        </div>
+      </div>
+
+      <div class="persona-section">
+        <div class="persona-section__title">Common Objections & Responses</div>
+        <div class="objection-item">
+          <div class="objection-item__q">"I don't have time to learn another system"</div>
+          <div class="objection-item__a">Setup takes less than a week, and your staff will save 8+ hours per week. We handle the heavy lifting during onboarding - most practices are fully running in 5 days.</div>
+        </div>
+        <div class="objection-item">
+          <div class="objection-item__q">"My staff is already overwhelmed"</div>
+          <div class="objection-item__a">That's exactly why they need this. Your team is spending 8-10 hours weekly on manual ordering. With DRCL, ordering takes 15 seconds instead of 15 minutes. They'll thank you.</div>
+        </div>
+        <div class="objection-item">
+          <div class="objection-item__q">"What if it doesn't work with my EMR?"</div>
+          <div class="objection-item__a">We integrate fully with CrystalPM. Patient data flows seamlessly - no double entry, no switching screens. We've helped hundreds of CrystalPM practices.</div>
+        </div>
+      </div>
+
+      <div class="message-box">
+        <div class="message-box__label">Winning Message</div>
+        <div class="message-box__text">"Keep your contact lens revenue in YOUR practice, not Amazon's pocket. Set it up in a week, see results in 30 days. Less than $9/day - less than the cost of one patient ordering online."</div>
+      </div>
+    </section>
+
+    <!-- ========== PERSONA 2: Dr. James Chen ========== -->
+    <section class="persona-full glass-card glass-card--padded" data-reveal>
+      <div class="persona-full__header">
+        <img src="./assets/images/personas/james-chen.png" alt="Dr. James Chen" class="persona-full__avatar">
+        <div class="persona-full__title-area">
+          <h2 class="persona-full__name">Dr. James Chen</h2>
+          <div class="persona-full__role">Multi-Location Group Leader / CEO</div>
+          <div class="persona-full__location">Dallas-Fort Worth, TX</div>
+          <span class="priority-badge priority-badge--highest" style="margin-top: 0.75rem;">HIGHEST PRIORITY</span>
+        </div>
+      </div>
+
+      <div class="persona-full__quote">
+        "Can it handle our volume across all locations? I need unified reporting and standardized processes."
+      </div>
+
+      <div class="persona-grid-stats">
+        <div class="persona-mini-stat"><div class="persona-mini-stat__value">48</div><div class="persona-mini-stat__label">Age</div></div>
+        <div class="persona-mini-stat"><div class="persona-mini-stat__value">8</div><div class="persona-mini-stat__label">Locations</div></div>
+        <div class="persona-mini-stat"><div class="persona-mini-stat__value">$8.5-9.5M</div><div class="persona-mini-stat__label">Combined Revenue</div></div>
+        <div class="persona-mini-stat"><div class="persona-mini-stat__value">12 ODs</div><div class="persona-mini-stat__label">Providers</div></div>
+        <div class="persona-mini-stat"><div class="persona-mini-stat__value">$18-36K</div><div class="persona-mini-stat__label">Est. ACV</div></div>
+        <div class="persona-mini-stat"><div class="persona-mini-stat__value">90-120 days</div><div class="persona-mini-stat__label">Sales Cycle</div></div>
+      </div>
+
+      <div class="two-col">
+        <div>
+          <div class="persona-section">
+            <div class="persona-section__title">Pain Points</div>
+            <ul class="info-list">
+              <li>Inconsistent CL ordering processes across 8 locations</li>
+              <li>No unified reporting on CL performance by location/doctor</li>
+              <li>Staff turnover means constant retraining on multiple systems</li>
+              <li>Preparing for PE exit; needs standardized operations</li>
+            </ul>
+          </div>
+
+          <div class="persona-section">
+            <div class="persona-section__title">Goals & Motivations</div>
+            <ul class="info-list">
+              <li>Standardize operations for eventual sale/PE exit</li>
+              <li>Increase CL capture rate from 65% to 80%+ chain-wide</li>
+              <li>Reduce per-location operational costs through technology</li>
+              <li>Single dashboard view across all practices</li>
+            </ul>
+          </div>
+
+          <div class="persona-section">
+            <div class="persona-section__title">Technology Profile</div>
+            <ul class="info-list">
+              <li><strong>EMR:</strong> RevolutionEHR (enterprise)</li>
+              <li><strong>Tech Comfort:</strong> High; uses dashboards, analytics</li>
+              <li><strong>Innovation:</strong> High; always evaluating solutions</li>
+            </ul>
+          </div>
         </div>
 
-        <!-- Persona 3: Jennifer Rodriguez -->
-        <div class="glass-card persona-card" data-reveal>
-          <div class="persona-card__header">
-            <div style="width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, var(--color-rose), var(--color-teal)); display: flex; align-items: center; justify-content: center; border: 3px solid white; box-shadow: var(--shadow-soft);">
-              <span style="font-size: 2rem; color: white;">JR</span>
-            </div>
-            <div class="persona-card__info">
-              <div class="persona-card__name">Jennifer Rodriguez</div>
-              <div class="persona-card__role">Practice Manager</div>
+        <div>
+          <div class="persona-section">
+            <div class="persona-section__title">Buying Behavior</div>
+            <ul class="info-list">
+              <li><strong>Authority:</strong> High but requires partner buy-in</li>
+              <li><strong>Process:</strong> Formal RFP, demos to leadership, 2-location pilot</li>
+              <li><strong>Influencers:</strong> Operations Manager, Lead OD</li>
+              <li><strong>Budget:</strong> Low sensitivity if ROI proven; wants scalability</li>
+            </ul>
+          </div>
+
+          <div class="persona-section">
+            <div class="persona-section__title">How to Reach Him</div>
+            <div class="channel-pills">
+              <span class="channel-pill--pub">Optometric Management</span>
+              <span class="channel-pill--pub">Vision Monday</span>
+              <span class="channel-pill--conf">SECO</span>
+              <span class="channel-pill--conf">Vision Expo</span>
+              <span class="channel-pill--conf">PE Conferences</span>
+              <span class="channel-pill--comm">LinkedIn Groups</span>
+              <span class="channel-pill">Warm Intro or Data-Rich Email</span>
             </div>
           </div>
-          <p class="persona-card__quote">"My doctors won't spend money on 'another subscription'."</p>
-          <div class="persona-card__stats">
-            <div class="persona-stat"><div class="persona-stat__value">$3,240</div><div class="persona-stat__label">Est. ACV</div></div>
-            <div class="persona-stat"><div class="persona-stat__value">30-45 days</div><div class="persona-stat__label">Sales Cycle</div></div>
-            <div class="persona-stat"><div class="persona-stat__value">38</div><div class="persona-stat__label">Age</div></div>
-            <div class="persona-stat"><div class="persona-stat__value">$1.4M</div><div class="persona-stat__label">Practice Rev</div></div>
+
+          <div class="persona-section">
+            <div class="persona-section__title">Preferred Contact Method</div>
+            <p style="color: #cbd5e1; font-size: 0.875rem; margin: 0;">
+              Intro through mutual connection (PE network, industry contact) OR cold email with hard data on multi-location ROI. Include case study from similar-sized group.
+            </p>
           </div>
-          <p style="font-size: 0.875rem; color: var(--color-slate-400); margin-top: 1rem;">
-            <strong>Pain Points:</strong> 8-10 hrs/week on CL admin, must justify every dollar, multiple vendor portals create errors
-          </p>
-          <p style="font-size: 0.875rem; color: var(--color-indigo); margin-bottom: 0;">
-            <strong>Message:</strong> "Show your doctors the numbers: 50% reduction in CL admin time, 32% revenue increase. We'll help you build the business case."
-          </p>
-          <span class="persona-card__priority persona-card__priority--high">HIGH PRIORITY</span>
+        </div>
+      </div>
+
+      <div class="persona-section">
+        <div class="persona-section__title">Common Objections & Responses</div>
+        <div class="objection-item">
+          <div class="objection-item__q">"Can it handle our volume across all locations?"</div>
+          <div class="objection-item__a">Absolutely. We support groups with 20+ locations processing thousands of orders monthly. Our enterprise tier includes dedicated account management and 99.9% uptime SLA.</div>
+        </div>
+        <div class="objection-item">
+          <div class="objection-item__q">"How long is the implementation for 8 practices?"</div>
+          <div class="objection-item__a">We recommend a phased 6-week rollout: 2 pilot locations in weeks 1-2, remaining 6 in weeks 3-6. Full enterprise deployment with training typically completes in 8 weeks.</div>
+        </div>
+        <div class="objection-item">
+          <div class="objection-item__q">"What's the training burden for 45 staff members?"</div>
+          <div class="objection-item__a">Each staff member needs only 30-45 minutes of training. We provide on-site training, video library, and train-the-trainer materials. Most staff are proficient within 2 days.</div>
+        </div>
+      </div>
+
+      <div class="message-box">
+        <div class="message-box__label">Winning Message</div>
+        <div class="message-box__text">"One platform, all 8 locations. Real-time CL performance dashboards showing capture rate by location, by provider, by lens type. Standardize your operations for scale - or for your next chapter."</div>
+      </div>
+    </section>
+
+    <!-- ========== PERSONA 3: Jennifer Rodriguez ========== -->
+    <section class="persona-full glass-card glass-card--padded" data-reveal>
+      <div class="persona-full__header">
+        <img src="./assets/images/personas/jennifer-rodriguez.png" alt="Jennifer Rodriguez" class="persona-full__avatar">
+        <div class="persona-full__title-area">
+          <h2 class="persona-full__name">Jennifer Rodriguez</h2>
+          <div class="persona-full__role">Practice Manager</div>
+          <div class="persona-full__location">Phoenix, AZ (Suburbs)</div>
+          <span class="priority-badge priority-badge--high" style="margin-top: 0.75rem;">HIGH PRIORITY</span>
+        </div>
+      </div>
+
+      <div class="persona-full__quote">
+        "My doctors won't spend money on 'another subscription.' I need to build a bulletproof business case."
+      </div>
+
+      <div class="persona-grid-stats">
+        <div class="persona-mini-stat"><div class="persona-mini-stat__value">38</div><div class="persona-mini-stat__label">Age</div></div>
+        <div class="persona-mini-stat"><div class="persona-mini-stat__value">6 yrs</div><div class="persona-mini-stat__label">In Role</div></div>
+        <div class="persona-mini-stat"><div class="persona-mini-stat__value">$1.4M</div><div class="persona-mini-stat__label">Practice Revenue</div></div>
+        <div class="persona-mini-stat"><div class="persona-mini-stat__value">2 ODs</div><div class="persona-mini-stat__label">Doctors</div></div>
+        <div class="persona-mini-stat"><div class="persona-mini-stat__value">$3,240</div><div class="persona-mini-stat__label">Est. ACV</div></div>
+        <div class="persona-mini-stat"><div class="persona-mini-stat__value">30-45 days</div><div class="persona-mini-stat__label">Sales Cycle</div></div>
+      </div>
+
+      <div class="two-col">
+        <div>
+          <div class="persona-section">
+            <div class="persona-section__title">Pain Points</div>
+            <ul class="info-list">
+              <li>8-10 hours/week staff time on CL administration</li>
+              <li>Doctor-owners don't prioritize tech investment</li>
+              <li>Multiple vendor portals create confusion and errors</li>
+              <li>Must justify every dollar to cost-conscious owners</li>
+            </ul>
+          </div>
+
+          <div class="persona-section">
+            <div class="persona-section__title">Goals & Motivations</div>
+            <ul class="info-list">
+              <li>Reduce staff overtime caused by manual CL ordering</li>
+              <li>Prove her value by finding efficiency improvements</li>
+              <li>Advance to managing a larger practice or group</li>
+              <li>Be seen as a strategic partner, not just admin</li>
+            </ul>
+          </div>
+
+          <div class="persona-section">
+            <div class="persona-section__title">Technology Profile</div>
+            <ul class="info-list">
+              <li><strong>EMR:</strong> Officemate</li>
+              <li><strong>Tech Comfort:</strong> High; manages all practice tech</li>
+              <li><strong>Innovation:</strong> High; proactively researches solutions</li>
+            </ul>
+          </div>
         </div>
 
-        <!-- Persona 4: Dr. Michael Thompson -->
-        <div class="glass-card persona-card" data-reveal>
-          <div class="persona-card__header">
-            <div style="width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, var(--color-indigo), var(--color-teal)); display: flex; align-items: center; justify-content: center; border: 3px solid white; box-shadow: var(--shadow-soft);">
-              <span style="font-size: 2rem; color: white;">MT</span>
-            </div>
-            <div class="persona-card__info">
-              <div class="persona-card__name">Dr. Michael Thompson</div>
-              <div class="persona-card__role">New Practice Owner</div>
+        <div>
+          <div class="persona-section">
+            <div class="persona-section__title">Buying Behavior</div>
+            <ul class="info-list">
+              <li><strong>Authority:</strong> Recommender (doctors decide)</li>
+              <li><strong>Process:</strong> Research online, demo, present ROI to doctors</li>
+              <li><strong>Influencers:</strong> Peer practice managers in FB groups</li>
+              <li><strong>Budget:</strong> High sensitivity; must justify every dollar</li>
+            </ul>
+          </div>
+
+          <div class="persona-section">
+            <div class="persona-section__title">How to Reach Her</div>
+            <div class="channel-pills">
+              <span class="channel-pill--pub">Optometric Management</span>
+              <span class="channel-pill--pub">AOPT Newsletters</span>
+              <span class="channel-pill--conf">Local CE Events</span>
+              <span class="channel-pill--comm">ODs on Facebook (very active)</span>
+              <span class="channel-pill--comm">AOPT Groups</span>
+              <span class="channel-pill">Email with ROI Calculator</span>
             </div>
           </div>
-          <p class="persona-card__quote">"I can't afford another monthly subscription right now."</p>
-          <div class="persona-card__stats">
-            <div class="persona-stat"><div class="persona-stat__value">$3,240</div><div class="persona-stat__label">Est. ACV</div></div>
-            <div class="persona-stat"><div class="persona-stat__value">14-30 days</div><div class="persona-stat__label">Sales Cycle</div></div>
-            <div class="persona-stat"><div class="persona-stat__value">33</div><div class="persona-stat__label">Age</div></div>
-            <div class="persona-stat"><div class="persona-stat__value">$720K</div><div class="persona-stat__label">Revenue</div></div>
+
+          <div class="persona-section">
+            <div class="persona-section__title">Preferred Contact Method</div>
+            <p style="color: #cbd5e1; font-size: 0.875rem; margin: 0;">
+              <svg class="icon" width="16" height="16" style="vertical-align: middle; margin-right: 0.5rem;"><use href="#icon-mail"/></svg>
+              Email with ROI calculator link and one-pager she can present to doctors. Offer to join her pitch meeting virtually.
+            </p>
           </div>
-          <p style="font-size: 0.875rem; color: var(--color-slate-400); margin-top: 1rem;">
-            <strong>Pain Points:</strong> Time poverty, cash flow constraints from acquisition debt, inherited outdated systems
-          </p>
-          <p style="font-size: 0.875rem; color: var(--color-indigo); margin-bottom: 0;">
-            <strong>Message:</strong> "Turn your CL business into a revenue engine from day one. Less than $9/day to capture revenue you're losing to the internet."
-          </p>
-          <span class="persona-card__priority persona-card__priority--medium">MEDIUM-HIGH PRIORITY</span>
+        </div>
+      </div>
+
+      <div class="persona-section">
+        <div class="persona-section__title">Common Objections & Responses</div>
+        <div class="objection-item">
+          <div class="objection-item__q">"My doctors won't spend money on 'another subscription'"</div>
+          <div class="objection-item__a">We'll help you build the business case. Our ROI calculator shows exactly how the $270/month pays for itself in the first month. We can even join your pitch call to answer their questions.</div>
+        </div>
+        <div class="objection-item">
+          <div class="objection-item__q">"How do I prove the ROI to skeptical owners?"</div>
+          <div class="objection-item__a">We provide a one-page ROI summary customized to your practice's numbers. Average practices see $35K+ in recaptured revenue annually - that's 10.8x return on the subscription cost.</div>
+        </div>
+        <div class="objection-item">
+          <div class="objection-item__q">"Is there a trial period?"</div>
+          <div class="objection-item__a">Yes - we offer a 30-day pilot period. If you don't see measurable time savings and improved patient conversion, we'll work with you until you do or refund the month.</div>
+        </div>
+      </div>
+
+      <div class="message-box">
+        <div class="message-box__label">Winning Message</div>
+        <div class="message-box__text">"Show your doctors the numbers: 50% reduction in CL admin time, 32% average revenue increase. We'll even help you build the business case and join your pitch meeting."</div>
+      </div>
+    </section>
+
+    <!-- ========== PERSONA 4: Dr. Michael Thompson ========== -->
+    <section class="persona-full glass-card glass-card--padded" data-reveal>
+      <div class="persona-full__header">
+        <img src="./assets/images/personas/michael-thompson.png" alt="Dr. Michael Thompson" class="persona-full__avatar">
+        <div class="persona-full__title-area">
+          <h2 class="persona-full__name">Dr. Michael Thompson</h2>
+          <div class="persona-full__role">New Practice Owner</div>
+          <div class="persona-full__location">Charlotte, NC (Suburbs)</div>
+          <span class="priority-badge priority-badge--medium" style="margin-top: 0.75rem;">MEDIUM-HIGH PRIORITY</span>
+        </div>
+      </div>
+
+      <div class="persona-full__quote">
+        "I can't afford another monthly subscription right now. Every expense is scrutinized."
+      </div>
+
+      <div class="persona-grid-stats">
+        <div class="persona-mini-stat"><div class="persona-mini-stat__value">33</div><div class="persona-mini-stat__label">Age</div></div>
+        <div class="persona-mini-stat"><div class="persona-mini-stat__value">18 mo</div><div class="persona-mini-stat__label">As Owner</div></div>
+        <div class="persona-mini-stat"><div class="persona-mini-stat__value">$720K</div><div class="persona-mini-stat__label">Revenue (growing)</div></div>
+        <div class="persona-mini-stat"><div class="persona-mini-stat__value">3</div><div class="persona-mini-stat__label">Staff Size</div></div>
+        <div class="persona-mini-stat"><div class="persona-mini-stat__value">$3,240</div><div class="persona-mini-stat__label">Est. ACV</div></div>
+        <div class="persona-mini-stat"><div class="persona-mini-stat__value">14-30 days</div><div class="persona-mini-stat__label">Sales Cycle</div></div>
+      </div>
+
+      <div class="two-col">
+        <div>
+          <div class="persona-section">
+            <div class="persona-section__title">Pain Points</div>
+            <ul class="info-list">
+              <li>Time poverty - overwhelmed running all aspects of practice</li>
+              <li>Cash flow constraints from practice loan payments</li>
+              <li>Inherited outdated systems from previous owner</li>
+              <li>Competing with corporate optometry nearby</li>
+            </ul>
+          </div>
+
+          <div class="persona-section">
+            <div class="persona-section__title">Goals & Motivations</div>
+            <ul class="info-list">
+              <li>Grow practice revenue 20%+ annually to pay down debt</li>
+              <li>Establish systems and processes for eventual scale</li>
+              <li>Compete effectively with corporate optometry</li>
+              <li>Modernize the practice he acquired</li>
+            </ul>
+          </div>
+
+          <div class="persona-section">
+            <div class="persona-section__title">Technology Profile</div>
+            <ul class="info-list">
+              <li><strong>EMR:</strong> RevolutionEHR (migrated)</li>
+              <li><strong>Tech Comfort:</strong> Very high; digital native</li>
+              <li><strong>Innovation:</strong> Very high; eager to modernize</li>
+            </ul>
+          </div>
         </div>
 
-        <!-- Persona 5: Dr. Amanda Foster -->
-        <div class="glass-card persona-card" data-reveal>
-          <div class="persona-card__header">
-            <div style="width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, #94a3b8, var(--color-slate-600)); display: flex; align-items: center; justify-content: center; border: 3px solid white; box-shadow: var(--shadow-soft);">
-              <span style="font-size: 2rem; color: white;">AF</span>
-            </div>
-            <div class="persona-card__info">
-              <div class="persona-card__name">Dr. Amanda Foster</div>
-              <div class="persona-card__role">Corporate-Employed OD</div>
+        <div>
+          <div class="persona-section">
+            <div class="persona-section__title">Buying Behavior</div>
+            <ul class="info-list">
+              <li><strong>Authority:</strong> Full authority but budget-constrained</li>
+              <li><strong>Process:</strong> Heavy online research, peer input, quick if ROI clear</li>
+              <li><strong>Influencers:</strong> Optometry school classmates, new OD groups</li>
+              <li><strong>Budget:</strong> High sensitivity in year 1-2</li>
+            </ul>
+          </div>
+
+          <div class="persona-section">
+            <div class="persona-section__title">How to Reach Him</div>
+            <div class="channel-pills">
+              <span class="channel-pill--pub">Online Content/Blogs</span>
+              <span class="channel-pill--pub">Podcasts</span>
+              <span class="channel-pill--conf">Local CE Events</span>
+              <span class="channel-pill--comm">New OD Facebook Groups</span>
+              <span class="channel-pill--comm">Reddit r/optometry</span>
+              <span class="channel-pill">Cold Email + Video Demo</span>
             </div>
           </div>
-          <p class="persona-card__quote">"No control over practice technology decisions."</p>
-          <div class="persona-card__stats">
-            <div class="persona-stat"><div class="persona-stat__value">$0</div><div class="persona-stat__label">Current ACV</div></div>
-            <div class="persona-stat"><div class="persona-stat__value">5-7 years</div><div class="persona-stat__label">Future Timeline</div></div>
-            <div class="persona-stat"><div class="persona-stat__value">29</div><div class="persona-stat__label">Age</div></div>
-            <div class="persona-stat"><div class="persona-stat__value">$145K</div><div class="persona-stat__label">Salary</div></div>
+
+          <div class="persona-section">
+            <div class="persona-section__title">Preferred Contact Method</div>
+            <p style="color: #cbd5e1; font-size: 0.875rem; margin: 0;">
+              Cold email with strong value proposition and link to short video demo. He'll research independently before responding. Quick decision if ROI is clear.
+            </p>
           </div>
-          <p style="font-size: 0.875rem; color: var(--color-slate-400); margin-top: 1rem;">
-            <strong>Pain Points:</strong> No control over tech decisions, CL revenue goes to LensCrafters, frustrated by corporate systems
-          </p>
-          <p style="font-size: 0.875rem; color: var(--color-indigo); margin-bottom: 0;">
-            <strong>Nurture Message:</strong> "When you're ready to open your own practice, we'll help you build a CL business that competes with the corporate giants."
-          </p>
-          <span class="persona-card__priority persona-card__priority--low">LOW (NURTURE)</span>
+        </div>
+      </div>
+
+      <div class="persona-section">
+        <div class="persona-section__title">Common Objections & Responses</div>
+        <div class="objection-item">
+          <div class="objection-item__q">"I can't afford another monthly subscription right now"</div>
+          <div class="objection-item__a">At less than $9/day, DRCL typically pays for itself in the first 2 weeks. One patient who stays in your practice instead of ordering online covers the monthly cost. It's not an expense - it's an investment with 10x+ return.</div>
+        </div>
+        <div class="objection-item">
+          <div class="objection-item__q">"I need to focus on the basics first"</div>
+          <div class="objection-item__a">CL revenue IS a basic. Contact lenses represent recurring revenue that grows your practice. Every month you wait, you're losing patients to 1-800 Contacts. This IS the foundation.</div>
+        </div>
+        <div class="objection-item">
+          <div class="objection-item__q">"Can I start with a trial or pay-as-I-grow?"</div>
+          <div class="objection-item__a">Absolutely. We offer a 30-day trial so you can prove the ROI before committing. Many new practice owners see results in the first week.</div>
+        </div>
+      </div>
+
+      <div class="message-box">
+        <div class="message-box__label">Winning Message</div>
+        <div class="message-box__text">"Turn your contact lens business into a revenue engine from day one. Less than $9/day to capture revenue you're currently losing to the internet. Built by ODs who understand the new practice grind."</div>
+      </div>
+    </section>
+
+    <!-- ========== PERSONA 5: Dr. Amanda Foster ========== -->
+    <section class="persona-full glass-card glass-card--padded" data-reveal>
+      <div class="persona-full__header">
+        <img src="./assets/images/personas/amanda-foster.png" alt="Dr. Amanda Foster" class="persona-full__avatar">
+        <div class="persona-full__title-area">
+          <h2 class="persona-full__name">Dr. Amanda Foster</h2>
+          <div class="persona-full__role">Corporate-Employed OD</div>
+          <div class="persona-full__location">Atlanta, GA (Suburbs)</div>
+          <span class="priority-badge priority-badge--low" style="margin-top: 0.75rem;">LOW (NURTURE)</span>
+        </div>
+      </div>
+
+      <div class="persona-full__quote">
+        "I have no control over practice technology decisions. But someday I'll open my own practice."
+      </div>
+
+      <div class="persona-grid-stats">
+        <div class="persona-mini-stat"><div class="persona-mini-stat__value">29</div><div class="persona-mini-stat__label">Age</div></div>
+        <div class="persona-mini-stat"><div class="persona-mini-stat__value">4 yrs</div><div class="persona-mini-stat__label">Experience</div></div>
+        <div class="persona-mini-stat"><div class="persona-mini-stat__value">$145K</div><div class="persona-mini-stat__label">Salary + Bonus</div></div>
+        <div class="persona-mini-stat"><div class="persona-mini-stat__value">0</div><div class="persona-mini-stat__label">Decision Authority</div></div>
+        <div class="persona-mini-stat"><div class="persona-mini-stat__value">$0</div><div class="persona-mini-stat__label">Current ACV</div></div>
+        <div class="persona-mini-stat"><div class="persona-mini-stat__value">5-7 yrs</div><div class="persona-mini-stat__label">Future Timeline</div></div>
+      </div>
+
+      <div class="two-col">
+        <div>
+          <div class="persona-section">
+            <div class="persona-section__title">Current Situation</div>
+            <ul class="info-list">
+              <li>Employed by LensCrafters sublease</li>
+              <li>No control over practice technology decisions</li>
+              <li>CL revenue goes to LensCrafters, not her</li>
+              <li>Frustrated by inefficient corporate systems</li>
+            </ul>
+          </div>
+
+          <div class="persona-section">
+            <div class="persona-section__title">Future Goals</div>
+            <ul class="info-list">
+              <li>Build experience and savings for private practice (5-7 years)</li>
+              <li>Stay current on industry trends and technology</li>
+              <li>Network with practice owners for opportunities</li>
+              <li>Learn what works before investing her own money</li>
+            </ul>
+          </div>
+
+          <div class="persona-section">
+            <div class="persona-section__title">Technology Profile</div>
+            <ul class="info-list">
+              <li><strong>EMR:</strong> Corporate system (no choice)</li>
+              <li><strong>Tech Comfort:</strong> High; uses personal tech tools</li>
+              <li><strong>Innovation:</strong> High personally; constrained professionally</li>
+            </ul>
+          </div>
         </div>
 
-        <!-- Persona 6: Dr. Kevin Park -->
-        <div class="glass-card persona-card" data-reveal>
-          <div class="persona-card__header">
-            <div style="width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, var(--color-teal), var(--color-rose)); display: flex; align-items: center; justify-content: center; border: 3px solid white; box-shadow: var(--shadow-soft);">
-              <span style="font-size: 2rem; color: white;">KP</span>
-            </div>
-            <div class="persona-card__info">
-              <div class="persona-card__name">Dr. Kevin Park</div>
-              <div class="persona-card__role">Tech-Savvy Innovator</div>
+        <div>
+          <div class="persona-section">
+            <div class="persona-section__title">Nurture Strategy</div>
+            <ul class="info-list">
+              <li><strong>Timeline:</strong> 5-7 years to practice ownership</li>
+              <li><strong>Goal:</strong> Top-of-mind when she's ready to buy</li>
+              <li><strong>Approach:</strong> Educational content, not sales</li>
+              <li><strong>Value:</strong> Help her learn before she leaps</li>
+            </ul>
+          </div>
+
+          <div class="persona-section">
+            <div class="persona-section__title">How to Reach Her</div>
+            <div class="channel-pills">
+              <span class="channel-pill--pub">Women In Optometry</span>
+              <span class="channel-pill--pub">Career Content</span>
+              <span class="channel-pill--conf">AOA Optometry's Meeting</span>
+              <span class="channel-pill--conf">Vision Expo</span>
+              <span class="channel-pill--comm">New OD Facebook Groups</span>
+              <span class="channel-pill--comm">Women in Optometry</span>
+              <span class="channel-pill">Educational Content Only</span>
             </div>
           </div>
-          <p class="persona-card__quote">"Does it handle my specialty lens inventory?"</p>
-          <div class="persona-card__stats">
-            <div class="persona-stat"><div class="persona-stat__value">$3,240-5K</div><div class="persona-stat__label">Est. ACV</div></div>
-            <div class="persona-stat"><div class="persona-stat__value">7-14 days</div><div class="persona-stat__label">Sales Cycle</div></div>
-            <div class="persona-stat"><div class="persona-stat__value">41</div><div class="persona-stat__label">Age</div></div>
-            <div class="persona-stat"><div class="persona-stat__value">$1.3M</div><div class="persona-stat__label">Revenue</div></div>
+
+          <div class="persona-section">
+            <div class="persona-section__title">Content That Resonates</div>
+            <p style="color: #cbd5e1; font-size: 0.875rem; margin: 0;">
+              "How to build a CL business from day one" | "What I wish I knew before opening my practice" | Practice ownership guides | New OD resource library
+            </p>
           </div>
-          <p style="font-size: 0.875rem; color: var(--color-slate-400); margin-top: 1rem;">
-            <strong>Pain Points:</strong> Specialty lens ordering is complex, standard platforms don't handle specialty workflows
-          </p>
-          <p style="font-size: 0.875rem; color: var(--color-indigo); margin-bottom: 0;">
-            <strong>Message:</strong> "Finally, a platform that understands specialty contact lens workflows. Ortho-k, scleral, myopia management - all in one system."
-          </p>
-          <span class="persona-card__priority persona-card__priority--medium">MEDIUM-HIGH PRIORITY</span>
         </div>
+      </div>
+
+      <div class="message-box" style="background: linear-gradient(135deg, rgba(148,163,184,0.1), rgba(99,102,241,0.05)); border-color: rgba(148,163,184,0.2);">
+        <div class="message-box__label">Nurture Message (Not Sales)</div>
+        <div class="message-box__text">"When you're ready to open your own practice, we'll help you build a contact lens business that competes with the corporate giants you know too well. Until then, here are free resources to help you prepare."</div>
+      </div>
+    </section>
+
+    <!-- ========== PERSONA 6: Dr. Kevin Park ========== -->
+    <section class="persona-full glass-card glass-card--padded" data-reveal>
+      <div class="persona-full__header">
+        <img src="./assets/images/personas/kevin-park.png" alt="Dr. Kevin Park" class="persona-full__avatar">
+        <div class="persona-full__title-area">
+          <h2 class="persona-full__name">Dr. Kevin Park</h2>
+          <div class="persona-full__role">Tech-Savvy Innovator / Specialty CL Practice</div>
+          <div class="persona-full__location">Seattle, WA (Metro)</div>
+          <span class="priority-badge priority-badge--medium" style="margin-top: 0.75rem;">MEDIUM-HIGH PRIORITY</span>
+        </div>
+      </div>
+
+      <div class="persona-full__quote">
+        "Does it handle my specialty lens inventory? I need customizable workflows for ortho-k vs. standard soft lenses."
+      </div>
+
+      <div class="persona-grid-stats">
+        <div class="persona-mini-stat"><div class="persona-mini-stat__value">41</div><div class="persona-mini-stat__label">Age</div></div>
+        <div class="persona-mini-stat"><div class="persona-mini-stat__value">15 yrs</div><div class="persona-mini-stat__label">Experience</div></div>
+        <div class="persona-mini-stat"><div class="persona-mini-stat__value">$1.3M</div><div class="persona-mini-stat__label">Revenue</div></div>
+        <div class="persona-mini-stat"><div class="persona-mini-stat__value">2 ODs</div><div class="persona-mini-stat__label">Providers</div></div>
+        <div class="persona-mini-stat"><div class="persona-mini-stat__value">$3.2-5K</div><div class="persona-mini-stat__label">Est. ACV</div></div>
+        <div class="persona-mini-stat"><div class="persona-mini-stat__value">7-14 days</div><div class="persona-mini-stat__label">Sales Cycle</div></div>
+      </div>
+
+      <div class="two-col">
+        <div>
+          <div class="persona-section">
+            <div class="persona-section__title">Pain Points</div>
+            <ul class="info-list">
+              <li>Specialty lens ordering is complex and time-consuming</li>
+              <li>Standard CL platforms don't handle specialty workflows</li>
+              <li>Multiple distributor relationships for different brands</li>
+              <li>Needs better analytics on specialty lens business</li>
+            </ul>
+          </div>
+
+          <div class="persona-section">
+            <div class="persona-section__title">Goals & Motivations</div>
+            <ul class="info-list">
+              <li>Position as regional leader in specialty contact lenses</li>
+              <li>Streamline operations to focus on clinical innovation</li>
+              <li>Influence industry through speaking and content</li>
+              <li>Beta test new products; be an early adopter</li>
+            </ul>
+          </div>
+
+          <div class="persona-section">
+            <div class="persona-section__title">Technology Profile</div>
+            <ul class="info-list">
+              <li><strong>EMR:</strong> RevolutionEHR</li>
+              <li><strong>Tech Comfort:</strong> Expert; early adopter</li>
+              <li><strong>Innovation:</strong> Very high; beta tests everything</li>
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <div class="persona-section">
+            <div class="persona-section__title">Buying Behavior</div>
+            <ul class="info-list">
+              <li><strong>Authority:</strong> Full authority; fast decision-maker</li>
+              <li><strong>Process:</strong> Tries immediately; decides on experience</li>
+              <li><strong>Influencers:</strong> Other specialty practitioners, KOLs</li>
+              <li><strong>Budget:</strong> Low sensitivity; pays premium for quality</li>
+            </ul>
+          </div>
+
+          <div class="persona-section">
+            <div class="persona-section__title">How to Reach Him</div>
+            <div class="channel-pills">
+              <span class="channel-pill--pub">Contact Lens Spectrum</span>
+              <span class="channel-pill--pub">GSLS Proceedings</span>
+              <span class="channel-pill--conf">Global Specialty Lens Symposium</span>
+              <span class="channel-pill--conf">AAO</span>
+              <span class="channel-pill--comm">Specialty CL Facebook Groups</span>
+              <span class="channel-pill--comm">Twitter/X</span>
+              <span class="channel-pill">Peer Referral or Twitter DM</span>
+            </div>
+          </div>
+
+          <div class="persona-section">
+            <div class="persona-section__title">Preferred Contact Method</div>
+            <p style="color: #cbd5e1; font-size: 0.875rem; margin: 0;">
+              Peer recommendation from another specialty practitioner, Twitter DM, or email highlighting specialty lens capabilities. He'll try it immediately if intrigued.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="persona-section">
+        <div class="persona-section__title">Common Objections & Responses</div>
+        <div class="objection-item">
+          <div class="objection-item__q">"Does it handle my specialty lens inventory?"</div>
+          <div class="objection-item__a">Yes - we support ortho-k, scleral, myopia management, and custom soft lenses. You can track specialty lens inventory, set reorder points, and manage multiple distributors in one dashboard.</div>
+        </div>
+        <div class="objection-item">
+          <div class="objection-item__q">"Can I customize workflows for ortho-k vs. standard soft lenses?"</div>
+          <div class="objection-item__a">Absolutely. Create custom workflows for each lens type - different follow-up schedules, ordering processes, and patient communication templates. Your specialty practice, your rules.</div>
+        </div>
+        <div class="objection-item">
+          <div class="objection-item__q">"I need better analytics on my specialty lens business"</div>
+          <div class="objection-item__a">Our reporting breaks down revenue, volume, and margins by lens type - ortho-k vs. scleral vs. myopia management vs. standard. See exactly where your specialty business is growing.</div>
+        </div>
+      </div>
+
+      <div class="message-box" style="background: linear-gradient(135deg, rgba(20,184,166,0.1), rgba(99,102,241,0.05)); border-color: rgba(20,184,166,0.2);">
+        <div class="message-box__label">Winning Message</div>
+        <div class="message-box__text">"Finally, a platform that understands specialty contact lens workflows. Ortho-k, scleral, myopia management - all in one system with the analytics to grow your specialty practice."</div>
       </div>
     </section>
 
@@ -300,28 +832,93 @@
         <div class="glass-card glass-card--padded">
           <h3 style="color: var(--color-rose);">Tier 1: Launch Focus</h3>
           <ul style="color: var(--color-slate-300); font-size: 0.875rem; line-height: 2;">
-            <li>Multi-Location Groups</li>
-            <li>Solo Practice Owners</li>
+            <li><strong>Multi-Location Groups</strong> - High ACV ($18-36K)</li>
+            <li><strong>Solo Practice Owners</strong> - Volume (62% of market)</li>
           </ul>
-          <p style="font-size: 0.75rem; color: var(--color-slate-400);">Highest combined revenue potential. Solo = volume; Groups = high ACV.</p>
+          <p style="font-size: 0.75rem; color: var(--color-slate-400);">Combined highest revenue potential. Target via SECO, state conferences, PE networks.</p>
         </div>
 
         <div class="glass-card glass-card--padded">
           <h3 style="color: var(--color-indigo);">Tier 2: Scale Focus</h3>
           <ul style="color: var(--color-slate-300); font-size: 0.875rem; line-height: 2;">
-            <li>Practice Managers</li>
-            <li>New Practice Owners</li>
+            <li><strong>Practice Managers</strong> - Gateway to doctors</li>
+            <li><strong>New Practice Owners</strong> - Fast decisions, growth potential</li>
           </ul>
-          <p style="font-size: 0.75rem; color: var(--color-slate-400);">Efficient acquisition channels via content and communities.</p>
+          <p style="font-size: 0.75rem; color: var(--color-slate-400);">Efficient acquisition via Facebook groups, content marketing, ROI calculators.</p>
         </div>
 
         <div class="glass-card glass-card--padded">
           <h3 style="color: var(--color-teal);">Tier 3: Long-term</h3>
           <ul style="color: var(--color-slate-300); font-size: 0.875rem; line-height: 2;">
-            <li>Tech-Savvy Innovators</li>
-            <li>Corporate ODs</li>
+            <li><strong>Tech-Savvy Innovators</strong> - Beta testers, testimonials</li>
+            <li><strong>Corporate ODs</strong> - Future private practice owners</li>
           </ul>
-          <p style="font-size: 0.75rem; color: var(--color-slate-400);">Beta testers, testimonial sources, future private practice owners.</p>
+          <p style="font-size: 0.75rem; color: var(--color-slate-400);">Build brand awareness for future conversion. Educational content, not sales.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Channel Summary -->
+    <section class="content-section" data-reveal>
+      <h2 class="content-section__title">Channel Summary by Persona</h2>
+
+      <div class="glass-card glass-card--padded">
+        <div style="overflow-x: auto;">
+          <table class="competitive-table">
+            <thead>
+              <tr>
+                <th>Persona</th>
+                <th>Best Publications</th>
+                <th>Key Conferences</th>
+                <th>Online Communities</th>
+                <th>Contact Method</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Sarah (Solo)</td>
+                <td>Review of Optometry, State Newsletter</td>
+                <td>State AOA Meeting</td>
+                <td>ODs on Facebook (lurks)</td>
+                <td>Email, then phone</td>
+              </tr>
+              <tr>
+                <td>James (Multi)</td>
+                <td>Optometric Management, Vision Monday</td>
+                <td>SECO, Vision Expo, PE Conferences</td>
+                <td>LinkedIn Groups</td>
+                <td>Warm intro or data email</td>
+              </tr>
+              <tr>
+                <td>Jennifer (PM)</td>
+                <td>Optometric Management, AOPT</td>
+                <td>Local CE Events</td>
+                <td>ODs on FB, AOPT Groups (very active)</td>
+                <td>Email with ROI calculator</td>
+              </tr>
+              <tr>
+                <td>Michael (New)</td>
+                <td>Online content, Podcasts</td>
+                <td>Local CE (cost-conscious)</td>
+                <td>New OD FB Groups, Reddit</td>
+                <td>Cold email + video demo</td>
+              </tr>
+              <tr>
+                <td>Amanda (Corp)</td>
+                <td>Women In Optometry, Career content</td>
+                <td>AOA, Vision Expo</td>
+                <td>New OD FB, Women in Optometry</td>
+                <td>Educational content only</td>
+              </tr>
+              <tr>
+                <td>Kevin (Specialty)</td>
+                <td>Contact Lens Spectrum, GSLS</td>
+                <td>GSLS, AAO</td>
+                <td>Specialty CL FB, Twitter</td>
+                <td>Peer referral, Twitter DM</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </section>
